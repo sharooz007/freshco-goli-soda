@@ -62,13 +62,13 @@ export default function FranchisePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center max-w-3xl">
           <div className="inline-flex items-center gap-2 bg-[#EAB308]/20 text-[#EAB308] px-3.5 py-1 rounded-full text-xs font-semibold uppercase tracking-wider mb-4">
             <Factory size={14} weight="bold" />
-            <span>Turnkey Manufacturing Franchise</span>
+            <span>Soda Factory Franchise Setup</span>
           </div>
           <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-white leading-tight">
-            Launch Your Beverage Micro-Factory
+            Start Your Own Soda Bottling Factory
           </h1>
           <p className="mt-4 text-base sm:text-lg text-slate-300 leading-relaxed">
-            Own a standardized food-grade bottling plant with 85% operating margins. Complete machinery, syrup supply, recipes, and hands-on technician training starting at ₹11.9 Lakhs.
+            Own a modern food-grade soda bottling plant with 85% profit margin. Complete machinery, flavor syrups, formulas, and technician training starting at ₹11.9 Lakhs.
           </p>
 
           <div className="mt-8 flex flex-wrap justify-center gap-4">
@@ -76,13 +76,13 @@ export default function FranchisePage() {
               href="#investment-tiers"
               className="px-6 py-3 rounded-full bg-[#EAB308] hover:bg-[#ca9a04] text-slate-950 text-xs font-bold transition-colors shadow-sm"
             >
-              Compare Setup Tiers
+              Compare Factory Models
             </a>
             <a
               href="#unit-economics"
               className="px-6 py-3 rounded-full bg-white/10 hover:bg-white/15 text-white text-xs font-semibold backdrop-blur-sm border border-white/10 transition-colors"
             >
-              Unit Economics (₹1.40 Cost / Bottle)
+              Per Bottle Cost (₹1.40 Cost)
             </a>
           </div>
         </div>
@@ -96,14 +96,14 @@ export default function FranchisePage() {
               <ShieldCheck size={28} weight="duotone" className="text-emerald-600 shrink-0" />
               <div>
                 <p className="text-xs font-bold text-slate-900">ISO 9001 &amp; ISO 22000 Certified</p>
-                <p className="text-[11px] text-slate-500">Food Safety &amp; Engineering Compliance</p>
+                <p className="text-[11px] text-slate-500">Food Safety &amp; Machine Standards</p>
               </div>
             </div>
 
             <div className="flex items-center gap-3">
               <Factory size={28} weight="duotone" className="text-[#0E609C] shrink-0" />
               <div>
-                <p className="text-xs font-bold text-slate-900">270+ Operational Micro-Plants</p>
+                <p className="text-xs font-bold text-slate-900">270+ Running Factories</p>
                 <p className="text-[11px] text-slate-500">Active across 19 Indian states &amp; 7 countries</p>
               </div>
             </div>
@@ -111,8 +111,8 @@ export default function FranchisePage() {
             <div className="flex items-center gap-3">
               <Sparkle size={28} weight="duotone" className="text-[#EAB308] shrink-0" />
               <div>
-                <p className="text-xs font-bold text-slate-900">Territorial Exclusivity</p>
-                <p className="text-[11px] text-slate-500">Guaranteed protected distribution radius</p>
+                <p className="text-xs font-bold text-slate-900">Protected Area Rights</p>
+                <p className="text-[11px] text-slate-500">Single owner territory in your district</p>
               </div>
             </div>
           </div>
@@ -124,10 +124,10 @@ export default function FranchisePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <h2 className="text-3xl font-extrabold text-slate-900 tracking-tight">
-              Transparent Machinery &amp; Licensing Packages
+              Simple &amp; Transparent Setup Packages
             </h2>
             <p className="mt-3 text-slate-600 text-sm sm:text-base">
-              Every package includes high-pressure carbonation machinery, food-grade SS 304 contact fittings, on-site technician training, and recipe formulations.
+              Every package includes semi-automatic soda machines, food-grade SS 304 pipes, on-site technician training, and standard syrup formulas.
             </p>
           </div>
 
@@ -145,7 +145,7 @@ export default function FranchisePage() {
                 >
                   {isPopular && (
                     <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-[#0E609C] text-white px-4 py-1 rounded-full text-[11px] font-bold uppercase tracking-wider shadow-sm">
-                      Most Selected Turnkey Model
+                      Most Popular Factory Model
                     </div>
                   )}
 
@@ -159,13 +159,13 @@ export default function FranchisePage() {
 
                     {/* Capital Investment */}
                     <div className="bg-slate-50 rounded-2xl p-4 border border-slate-100 mb-6">
-                      <div className="text-xs text-slate-500 font-medium">Turnkey Setup Cost</div>
+                      <div className="text-xs text-slate-500 font-medium">Full Setup Cost</div>
                       <div className="text-3xl font-black text-slate-900 mt-0.5 tracking-tight">
                         {tier.investment}
                       </div>
                       <div className="text-[11px] text-emerald-600 font-semibold mt-1 flex items-center gap-1">
                         <CheckCircle size={13} weight="fill" />
-                        <span>Est. Monthly Net Profit: {tier.monthlyNetProfit}</span>
+                        <span>Expected Monthly Net Profit: {tier.monthlyNetProfit}</span>
                       </div>
                     </div>
 
@@ -176,11 +176,11 @@ export default function FranchisePage() {
                         <span className="font-semibold text-slate-800">{tier.dailyCapacity}</span>
                       </div>
                       <div className="flex justify-between">
-                        <span className="text-slate-400">Floor Space Needed:</span>
+                        <span className="text-slate-400">Room Space Needed:</span>
                         <span className="font-semibold text-slate-800">{tier.spaceRequired}</span>
                       </div>
                       <div className="flex justify-between">
-                        <span className="text-slate-400">Connected Power:</span>
+                        <span className="text-slate-400">Electricity Connection:</span>
                         <span className="font-semibold text-slate-800">{tier.powerRequired}</span>
                       </div>
                     </div>
@@ -188,7 +188,7 @@ export default function FranchisePage() {
                     {/* Deliverables List */}
                     <div className="space-y-2.5 mb-6">
                       <div className="text-xs font-bold text-slate-900 uppercase tracking-wider mb-2">
-                        Included in Turnkey Package:
+                        What You Get in This Package:
                       </div>
                       {tier.features.map((feature, idx) => (
                         <div key={idx} className="flex items-start gap-2 text-xs text-slate-700">
@@ -223,13 +223,13 @@ export default function FranchisePage() {
           <div className="max-w-3xl mx-auto text-center mb-16">
             <div className="inline-flex items-center gap-2 bg-emerald-50 text-emerald-700 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider mb-2">
               <ChartBar size={14} weight="bold" />
-              <span>Unit Economics Verification</span>
+              <span>Bottle Cost Calculation</span>
             </div>
             <h2 className="text-3xl font-extrabold text-slate-900 tracking-tight">
-              Why Goli Soda Yields 80% to 85% Gross Margins
+              Why Goli Soda Gives 80% to 85% Profit Margin
             </h2>
             <p className="mt-3 text-slate-600 text-sm sm:text-base">
-              The circular returnable glass bottle model eliminates recurring packaging container expenses, delivering incredible profitability per bottle produced.
+              Because traditional glass bottles are washed and reused again and again, you do not spend money on fresh plastic bottles every time. This creates very high profit for you.
             </p>
           </div>
 
@@ -237,30 +237,30 @@ export default function FranchisePage() {
             
             {/* Cost 1 */}
             <div className="p-6 rounded-2xl bg-slate-50 border border-slate-200/90 text-center">
-              <div className="text-xs font-semibold text-slate-500 uppercase tracking-wider">Syrup &amp; Flavor Concentrate</div>
+              <div className="text-xs font-semibold text-slate-500 uppercase tracking-wider">Syrup &amp; Flavour Concentrate</div>
               <div className="text-3xl font-bold text-slate-900 mt-2 font-mono">₹0.55</div>
-              <p className="text-xs text-slate-500 mt-1">Proprietary natural concentrate from Kasaragod HQ</p>
+              <p className="text-xs text-slate-500 mt-1">Ready syrup supplied from Kasaragod factory</p>
             </div>
 
             {/* Cost 2 */}
             <div className="p-6 rounded-2xl bg-slate-50 border border-slate-200/90 text-center">
-              <div className="text-xs font-semibold text-slate-500 uppercase tracking-wider">Sugar, Water &amp; Food CO2</div>
+              <div className="text-xs font-semibold text-slate-500 uppercase tracking-wider">Sugar, Water &amp; Food CO2 Gas</div>
               <div className="text-3xl font-bold text-slate-900 mt-2 font-mono">₹0.65</div>
-              <p className="text-xs text-slate-500 mt-1">Brix sugar dissolution and high-purity carbonation</p>
+              <p className="text-xs text-slate-500 mt-1">Sugar syrup mixing and chilled carbonation</p>
             </div>
 
             {/* Cost 3 */}
             <div className="p-6 rounded-2xl bg-slate-50 border border-slate-200/90 text-center">
-              <div className="text-xs font-semibold text-slate-500 uppercase tracking-wider">Electricity &amp; Direct Labor</div>
+              <div className="text-xs font-semibold text-slate-500 uppercase tracking-wider">Electricity &amp; Worker Wages</div>
               <div className="text-3xl font-bold text-slate-900 mt-2 font-mono">₹0.20</div>
-              <p className="text-xs text-slate-500 mt-1">Pneumatic filling cycle &amp; factory utilities</p>
+              <p className="text-xs text-slate-500 mt-1">Daily machine running and operator labor</p>
             </div>
 
             {/* Total Cost Card */}
             <div className="p-6 rounded-2xl bg-[#0E609C] text-white text-center shadow-md">
-              <div className="text-xs font-semibold text-sky-200 uppercase tracking-wider">Total COGS Per Bottle</div>
+              <div className="text-xs font-semibold text-sky-200 uppercase tracking-wider">Total Making Cost Per Bottle</div>
               <div className="text-3xl font-extrabold text-white mt-2 font-mono">₹1.40</div>
-              <p className="text-xs text-sky-100 mt-1">Sold to distributors at ₹6.00 to ₹7.00</p>
+              <p className="text-xs text-sky-100 mt-1">Sold to local shops at ₹6.00 to ₹7.00</p>
             </div>
 
           </div>
@@ -268,16 +268,16 @@ export default function FranchisePage() {
           {/* Economics Summary Strip */}
           <div className="mt-10 p-6 rounded-2xl bg-amber-50 border border-amber-200 max-w-4xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
             <div>
-              <p className="text-sm font-bold text-amber-950">Daily Volume Calculation (3,500 Bottles @ ₹5.10 Net Margin)</p>
+              <p className="text-sm font-bold text-amber-950">Daily Profit Calculation (3,500 Bottles @ ₹5.10 Net Margin)</p>
               <p className="text-xs text-amber-800 mt-0.5">
-                Generates ₹17,850 Net Daily Profit. Over 25 active bottling days = ₹4.46 Lakhs monthly gross operational surplus.
+                Generates ₹17,850 Daily Net Profit. In 25 working days = ₹4.46 Lakhs monthly gross earnings!
               </p>
             </div>
             <a
               href="#apply"
               className="shrink-0 px-5 py-2.5 rounded-xl bg-amber-500 hover:bg-amber-600 text-slate-950 text-xs font-bold transition-colors"
             >
-              Request Excel Model
+              Get Profit Chart
             </a>
           </div>
 
@@ -290,13 +290,13 @@ export default function FranchisePage() {
           <div className="max-w-3xl mb-12">
             <div className="inline-flex items-center gap-2 bg-[#0E609C]/10 text-[#0E609C] px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider mb-2">
               <GearSix size={14} weight="bold" />
-              <span>Plant Hardware Anatomy</span>
+              <span>Machines Included</span>
             </div>
             <h2 className="text-3xl font-extrabold text-slate-900 tracking-tight">
-              Standardized Industrial Bottling Machinery
+              Industrial Quality Bottling Machines
             </h2>
             <p className="text-slate-600 text-sm mt-2">
-              Engineered for continuous duty in tropical operating conditions with zero proprietary software lock-in and easily serviceable pneumatic parts.
+              Heavy-duty stainless steel machines built for Indian conditions. Easy to operate and maintain.
             </p>
           </div>
 
@@ -305,9 +305,9 @@ export default function FranchisePage() {
               <div className="w-10 h-10 rounded-xl bg-blue-50 text-[#0E609C] flex items-center justify-center font-bold text-sm mb-4">
                 01
               </div>
-              <h3 className="font-bold text-slate-900 text-base mb-2">Semi-Automatic Codd-Neck Bottling Head</h3>
+              <h3 className="font-bold text-slate-900 text-base mb-2">Semi-Automatic Marble Soda Filling Head</h3>
               <p className="text-xs text-slate-600 leading-relaxed">
-                Pneumatic marble-sealing head engineered to securely capture the internal glass marble stopper against the rubber gasket without breakage or leakage.
+                Pneumatic marble-sealing head designed to safely lock the internal marble stopper without bottle chipping or gas leakage.
               </p>
             </div>
 
@@ -315,9 +315,9 @@ export default function FranchisePage() {
               <div className="w-10 h-10 rounded-xl bg-blue-50 text-[#0E609C] flex items-center justify-center font-bold text-sm mb-4">
                 02
               </div>
-              <h3 className="font-bold text-slate-900 text-base mb-2">Industrial Refrigeration &amp; Glycol Chiller</h3>
+              <h3 className="font-bold text-slate-900 text-base mb-2">Water Chiller &amp; Cooling Unit (2 to 4°C)</h3>
               <p className="text-xs text-slate-600 leading-relaxed">
-                Maintains water at strict 2 to 4°C. Proper low water temperature is critical to ensure deep CO2 dissolution and long-lasting fizz retention.
+                Maintains water chilled at 2 to 4°C. Chilled water dissolves CO2 deeply to give sharp, long-lasting fizz.
               </p>
             </div>
 
@@ -325,9 +325,9 @@ export default function FranchisePage() {
               <div className="w-10 h-10 rounded-xl bg-blue-50 text-[#0E609C] flex items-center justify-center font-bold text-sm mb-4">
                 03
               </div>
-              <h3 className="font-bold text-slate-900 text-base mb-2">SS 304 Syrup Dissolution Tanks</h3>
+              <h3 className="font-bold text-slate-900 text-base mb-2">SS 304 Stainless Steel Syrup Mixing Tanks</h3>
               <p className="text-xs text-slate-600 leading-relaxed">
-                Food-grade stainless steel tanks with high-torque mechanical agitators for blending sugar syrup, citric balance, and concentrated flavor bases evenly.
+                Food-grade stainless steel tanks with electric motor stirrers for mixing sugar syrup, citric balance, and flavour syrups evenly.
               </p>
             </div>
 
@@ -335,9 +335,9 @@ export default function FranchisePage() {
               <div className="w-10 h-10 rounded-xl bg-blue-50 text-[#0E609C] flex items-center justify-center font-bold text-sm mb-4">
                 04
               </div>
-              <h3 className="font-bold text-slate-900 text-base mb-2">High-Pressure Carbonation Manifold</h3>
+              <h3 className="font-bold text-slate-900 text-base mb-2">High-Pressure Soda Gas Manifold</h3>
               <p className="text-xs text-slate-600 leading-relaxed">
-                Dual-stage pressure regulators and food-grade braided stainless steel lines that safely inject CO2 up to 4.2 volumes for intense signature fizz.
+                Heavy-duty safety valves and food-grade stainless steel braided pipes that inject high gas pressure safely for signature fizz.
               </p>
             </div>
 
@@ -345,9 +345,9 @@ export default function FranchisePage() {
               <div className="w-10 h-10 rounded-xl bg-blue-50 text-[#0E609C] flex items-center justify-center font-bold text-sm mb-4">
                 05
               </div>
-              <h3 className="font-bold text-slate-900 text-base mb-2">Multi-Stage Water Treatment Filter</h3>
+              <h3 className="font-bold text-slate-900 text-base mb-2">Multi-Stage Water Filter Unit</h3>
               <p className="text-xs text-slate-600 leading-relaxed">
-                Sediment micron pre-filters and activated carbon filtration beds remove chlorine and odor to preserve pure flavor transparency.
+                Micron particle filters and activated carbon beds remove all chlorine, dirt, and odor to keep water pure and crystal clear.
               </p>
             </div>
 
@@ -355,9 +355,9 @@ export default function FranchisePage() {
               <div className="w-10 h-10 rounded-xl bg-blue-50 text-[#0E609C] flex items-center justify-center font-bold text-sm mb-4">
                 06
               </div>
-              <h3 className="font-bold text-slate-900 text-base mb-2">Initial Glass Crate Float Package</h3>
+              <h3 className="font-bold text-slate-900 text-base mb-2">Glass Bottles &amp; Plastic Crates Float</h3>
               <p className="text-xs text-slate-600 leading-relaxed">
-                Includes virgin food-grade Codd-neck glass bottles with marble stoppers and branded high-density stacking crates ready for retail distribution.
+                Includes new food-safe marble glass bottles and heavy-duty plastic stacking crates ready for local shop delivery.
               </p>
             </div>
           </div>
@@ -369,7 +369,7 @@ export default function FranchisePage() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-extrabold text-slate-900">
-              Franchise Investor Questions
+              Frequently Asked Questions
             </h2>
             <p className="text-slate-600 text-sm mt-2">
               Clear facts regarding investment, plant setup, territory protection, and ongoing operation.
@@ -418,10 +418,10 @@ export default function FranchisePage() {
               <span>Direct Factory Allocation</span>
             </div>
             <h2 className="text-3xl sm:text-4xl font-extrabold">
-              Apply for Micro-Factory Territorial Rights
+              Apply for Factory Rights in Your District
             </h2>
             <p className="text-slate-300 text-sm mt-2 max-w-lg mx-auto">
-              Submit your district inquiry below. Our commercial expansion cell will check territory availability and provide the complete project blueprint.
+              Submit your district inquiry below. Our team will verify territory availability and contact you with full project details.
             </p>
           </div>
 
@@ -431,19 +431,19 @@ export default function FranchisePage() {
                 <div className="w-16 h-16 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto">
                   <CheckCircle size={36} weight="fill" />
                 </div>
-                <h3 className="text-2xl font-bold">Franchise Inquiry Received</h3>
+                <h3 className="text-2xl font-bold">Application Received Successfully</h3>
                 <p className="text-sm text-slate-600 max-w-md mx-auto">
-                  Thank you, <span className="font-semibold text-slate-900">{applicant.name || "Partner"}</span>. Our commercial expansion director will review territorial availability for <span className="font-semibold text-slate-900">{applicant.district || "your target region"}</span> and contact you shortly.
+                  Thank you, <span className="font-semibold text-slate-900">{applicant.name || "Partner"}</span>. Our expansion manager will check area availability for <span className="font-semibold text-slate-900">{applicant.district || "your target region"}</span> and contact you shortly.
                 </p>
                 <div className="pt-3">
                   <a
-                    href={`https://wa.me/919659100500?text=Hi%20Freshco,%20I%20applied%20for%20a%20franchise%20unit%20for%20${encodeURIComponent(applicant.district || "my district")}.`}
+                    href={`https://wa.me/919659100500?text=Hi%20Freshco,%20I%20applied%20for%20a%20factory%20unit%20for%20${encodeURIComponent(applicant.district || "my district")}.`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[#25D366] text-black font-bold text-xs hover:bg-[#20ba59] transition-colors"
                   >
                     <WhatsappLogo size={18} weight="fill" />
-                    <span>Speed Up Verification via WhatsApp</span>
+                    <span>Chat on WhatsApp Directly</span>
                   </a>
                 </div>
               </div>
@@ -503,9 +503,9 @@ export default function FranchisePage() {
                       onChange={(e) => setSelectedTier(e.target.value)}
                       className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-[#0E609C] bg-slate-50"
                     >
-                      <option value="standard">Micro-Factory Unit (₹11.9 Lakhs) - Recommended</option>
-                      <option value="express">Compact Bottling Unit (₹10.5 Lakhs)</option>
-                      <option value="industrial">High-Output Commercial Plant (₹18.5 Lakhs)</option>
+                      <option value="standard">Standard Soda Factory (₹11.9 Lakhs) - Most Popular</option>
+                      <option value="express">Starter Bottling Unit (₹10.5 Lakhs)</option>
+                      <option value="industrial">High-Capacity Plant (₹18.5 Lakhs)</option>
                     </select>
                   </div>
                 </div>
@@ -516,7 +516,7 @@ export default function FranchisePage() {
                     disabled={loading}
                     className="w-full py-3.5 px-6 rounded-xl bg-[#0E609C] hover:bg-[#0A3B60] text-white font-bold text-sm transition-all shadow-md flex items-center justify-center gap-2 cursor-pointer disabled:opacity-70"
                   >
-                    {loading ? "Submitting Application..." : "Submit Micro-Factory Application"}
+                    {loading ? "Submitting Application..." : "Submit Factory Application"}
                   </button>
                 </div>
 

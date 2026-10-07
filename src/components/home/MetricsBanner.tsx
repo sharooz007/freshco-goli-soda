@@ -4,32 +4,32 @@ const STATS = [
   {
     icon: Factory,
     value: "270+",
-    label: "Active Micro-Factories",
-    subtext: "Standardized bottling plants"
+    label: "Running Factories",
+    subtext: "Across India and abroad"
   },
   {
     icon: MapPinArea,
     value: "19",
     label: "Indian States",
-    subtext: "Nationwide supply grid"
+    subtext: "Strong supply network"
   },
   {
     icon: GlobeHemisphereWest,
     value: "7+",
-    label: "Global Markets",
-    subtext: "India, UAE, Sri Lanka & more"
+    label: "Countries Exported",
+    subtext: "UAE, Sri Lanka, Malaysia & more"
   },
   {
     icon: ClockCounterClockwise,
     value: "1979",
-    label: "Heritage Lineage",
-    subtext: "4+ decades in craft beverages"
+    label: "Operating Since",
+    subtext: "Over 45 years of trust"
   },
   {
     icon: Medal,
     value: "Awarded",
     label: "India Excellence 2024",
-    subtext: "Fastest-growing beverage brand"
+    subtext: "Fastest-growing soda brand"
   }
 ];
 

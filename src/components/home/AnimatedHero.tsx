@@ -38,38 +38,38 @@ export function AnimatedHero() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex-1 flex flex-col justify-center">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           
-          {/* Left Column: Focused B2B Value Proposition (Max 4 text elements per design-taste-frontend) */}
+          {/* Left Column: Focused Value Proposition */}
           <div className="lg:col-span-7 flex flex-col justify-center space-y-5 sm:space-y-6">
             
             {/* 1. Eyebrow Tag */}
             <div className="inline-flex items-center gap-2 self-start bg-slate-100/90 border border-slate-200/80 px-3.5 py-1.5 rounded-full text-xs font-semibold text-slate-800 shadow-2xs">
               <Sparkle size={14} weight="fill" className="text-[#EAB308]" />
-              <span>India&apos;s Fastest-Growing Micro-Factory Network</span>
+              <span>India&apos;s Fastest-Growing Soda Factory Network</span>
             </div>
 
             {/* 2. Headline (Max 2 lines at desktop) */}
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-slate-900 leading-[1.08]">
-              Tradition Bottled with{" "}
+              Original Indian Fizz.{" "}
               <span
                 className="transition-colors duration-500"
                 style={{ color: activeFlavor.accentColor }}
               >
-                Industrial Precision.
+                High Profit Factory Setup.
               </span>
             </h1>
 
-            {/* 3. Subtext (Max 20 words per design-taste-frontend rule) */}
+            {/* 3. Subtext (Max 20 words) */}
             <p className="text-base sm:text-lg text-slate-600 leading-relaxed max-w-[48ch]">
-              Turnkey goli soda micro-factories offering 85% gross margins and ₹3 Lakh monthly profit across 270+ active plants.
+              Complete ready-to-run soda factory setup with 85% profit margin and ₹3 Lakh monthly earnings across 270+ plants.
             </p>
 
-            {/* 4. Action CTAs (1 primary + 1 secondary) */}
+            {/* 4. Action CTAs */}
             <div className="flex flex-wrap items-center gap-3.5 pt-1">
               <Link
                 href="/franchise#apply"
                 className="inline-flex items-center gap-2 bg-[#0E609C] hover:bg-[#0A3B60] text-white px-6 py-3.5 rounded-full font-semibold text-sm shadow-sm hover:shadow transition-all duration-200 active:scale-[0.98]"
               >
-                <span>Request Franchise Blueprint</span>
+                <span>Get Factory Details</span>
                 <ArrowRight size={16} weight="bold" />
               </Link>
 
@@ -77,7 +77,7 @@ export function AnimatedHero() {
                 href="/products"
                 className="inline-flex items-center gap-2 bg-white hover:bg-slate-50 text-slate-800 border border-slate-300 px-5 py-3.5 rounded-full font-semibold text-sm shadow-2xs transition-colors active:scale-[0.98]"
               >
-                <span>Explore 100+ Flavors</span>
+                <span>Explore All Flavours</span>
               </Link>
             </div>
 
@@ -85,7 +85,7 @@ export function AnimatedHero() {
             <div className="grid grid-cols-3 gap-4 pt-4 border-t border-slate-200/80 max-w-lg">
               <div>
                 <div className="text-xl sm:text-2xl font-bold text-slate-900 tracking-tight">₹11.9 Lakh</div>
-                <div className="text-xs text-slate-500 font-medium">Turnkey Setup</div>
+                <div className="text-xs text-slate-500 font-medium">Full Setup Cost</div>
               </div>
               <div>
                 <div className="text-xl sm:text-2xl font-bold text-slate-900 tracking-tight">85%</div>
@@ -93,7 +93,7 @@ export function AnimatedHero() {
               </div>
               <div>
                 <div className="text-xl sm:text-2xl font-bold text-[#0E609C] tracking-tight">4 to 6 Mo.</div>
-                <div className="text-xs text-slate-500 font-medium">Capital Payback</div>
+                <div className="text-xs text-slate-500 font-medium">Investment Recovery</div>
               </div>
             </div>
 
@@ -172,7 +172,7 @@ export function AnimatedHero() {
             <div className="w-full max-w-md mt-4">
               <div className="flex items-center justify-between mb-2 px-1">
                 <span className="text-xs font-semibold text-slate-500 tracking-wide">
-                  Explore Signature Flavors ({activeIndex + 1}/{HERO_FLAVORS.length})
+                  Try Signature Flavours ({activeIndex + 1}/{HERO_FLAVORS.length})
                 </span>
                 <span className="text-xs text-[#0E609C] font-medium">
                   {activeFlavor.name}

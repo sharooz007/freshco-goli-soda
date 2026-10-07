@@ -8,9 +8,9 @@ import { List, X, PhoneCall, ArrowUpRight } from "@phosphor-icons/react";
 
 const NAV_LINKS = [
   { href: "/", label: "Home" },
-  { href: "/products", label: "Product Portfolio" },
-  { href: "/franchise", label: "Franchise Blueprint" },
-  { href: "/about", label: "Heritage & Scale" },
+  { href: "/products", label: "Flavours & Range" },
+  { href: "/franchise", label: "Franchise & Setup" },
+  { href: "/about", label: "Our Story" },
   { href: "/contact", label: "Factory & Contact" },
 ];
 
@@ -32,17 +32,17 @@ export function Navbar() {
       {/* Top B2B Announcement Strip */}
       <div className="bg-[#0A3B60] text-white text-xs py-2 px-4 text-center font-medium tracking-wide flex items-center justify-center gap-3 border-b border-white/10">
         <span className="inline-flex items-center gap-1.5 bg-[#EAB308]/20 text-[#EAB308] px-2 py-0.5 rounded-full text-[10px] font-semibold uppercase tracking-wider">
-          Franchise Expansion
+          New Factory Setup
         </span>
         <span className="hidden sm:inline">
-          Turnkey Micro-Factory Setup across 19 States: ₹11.9L Investment with 85% Margins.
+          Start Your Own Soda Factory in Your District: ₹11.9 Lakh Setup with 85% Margin.
         </span>
         <a
           href="tel:+919659100500"
           className="inline-flex items-center gap-1 font-semibold text-[#EAB308] hover:underline"
         >
           <PhoneCall size={13} weight="bold" />
-          <span>+91 9659 100 500</span>
+          <span>Call: +91 9659 100 500</span>
         </a>
       </div>
 
@@ -94,7 +94,7 @@ export function Navbar() {
               href="/franchise#apply"
               className="inline-flex items-center gap-2 bg-[#0E609C] hover:bg-[#0A3B60] text-white px-5 py-2.5 rounded-full text-sm font-semibold tracking-tight shadow-sm hover:shadow transition-all duration-200 active:scale-[0.98]"
             >
-              <span>Franchise Inquiry</span>
+              <span>Start a Factory</span>
               <ArrowUpRight size={16} weight="bold" />
             </Link>
           </div>
@@ -136,7 +136,7 @@ export function Navbar() {
                   onClick={() => setMobileOpen(false)}
                   className="w-full flex items-center justify-center gap-2 bg-[#0E609C] text-white py-3 rounded-xl font-semibold text-sm shadow-sm"
                 >
-                  <span>Request Franchise Blueprint</span>
+                  <span>Start a Factory</span>
                   <ArrowUpRight size={16} weight="bold" />
                 </Link>
               </div>

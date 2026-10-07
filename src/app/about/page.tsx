@@ -16,50 +16,50 @@ import {
 const TIMELINE = [
   {
     year: "1979",
-    title: "Bicycle Deliveries & Craft Roots",
-    description: "Started as a handcrafted artisanal soda bottling workshop in northern Kerala. Daily batches were corked manually and delivered to local village tea stalls on bicycles."
+    title: "Bicycle Deliveries & Humble Beginnings",
+    description: "Started as a small local soda bottling workshop in northern Kerala. Fresh soda bottles were delivered daily to village tea stalls on bicycles."
   },
   {
     year: "1998",
-    title: "Pneumatic Marble-Sealing Mechanization",
-    description: "Designed our first semi-automatic pneumatic marble-sealing fixtures, dramatically improving bottle sealing speed while eliminating breakage and gas loss."
+    title: "First Marble Sealing Machines",
+    description: "Developed our own air-operated marble bottle sealing machines, making bottling much faster and preventing bottle chipping and gas loss."
   },
   {
     year: "2016",
-    title: "The Turnkey Micro-Factory Model",
-    description: "Engineered our proprietary micro-factory franchise blueprint. Decentralized production allowed local entrepreneurs to run their own profitable bottling facilities with standardized syrup formulas."
+    title: "Complete Factory Franchise Model",
+    description: "Designed our complete ready-to-run factory setup. Local entrepreneurs could now run their own profitable soda bottling units with company syrups and training."
   },
   {
     year: "2021",
-    title: "100+ Flavors & Packaging Innovation",
-    description: "Expanded beyond classic Jeera and Nimbu into 33+ heritage glass flavors, sleek aluminum cans, one-way single-serve bottles, and tamper-proof travel PET formats."
+    title: "100+ Flavours & New Packaging",
+    description: "Expanded beyond classic Jeera and Nimbu into 33+ heritage flavours, aluminium cans, single-use glass bottles, and travel PET bottles."
   },
   {
     year: "2024",
-    title: "India Excellence Award & Global Footprint",
-    description: "Honored with the India Excellence Award 2024 for Fastest Growing Beverage Brand. Network expanded to 270+ active plants across 19 states and 7 export countries."
+    title: "India Excellence Award & Global Reach",
+    description: "Won the India Excellence Award 2024 for Fastest Growing Beverage Brand. Crossed 270+ active plants across 19 states and 7 export countries."
   }
 ];
 
 const VALUES = [
   {
-    title: "Decentralized Production",
-    description: "Rather than shipping water thousands of kilometers from massive centralized plants, we empower local bottling units to produce fresh soda right where it is consumed.",
+    title: "Local Production",
+    description: "Instead of transporting water thousands of kilometres from giant factories, local entrepreneurs bottle fresh soda right in their town.",
     icon: Factory
   },
   {
-    title: "Circular Returnable Glass",
-    description: "Our flagship Codd-neck glass bottles are reused up to 50 times, eliminating single-use plastic waste and delivering unbeatable unit economics for retailers.",
+    title: "Reusable Glass Bottles",
+    description: "Our traditional marble glass bottles are washed and reused up to 50 times, reducing plastic waste and giving the highest profit to shopkeepers.",
     icon: TreeEvergreen
   },
   {
-    title: "Rigorous Quality Assurance",
-    description: "Certified under ISO 9001:2015 and ISO 22000:2018 food safety standards. Every syrup batch is blended and tested under strict brix and microbiology guidelines.",
+    title: "Clean Quality Standards",
+    description: "Certified under ISO 9001 and ISO 22000 food safety standards. Every syrup batch is tested for pure taste and hygiene.",
     icon: ShieldCheck
   },
   {
-    title: "Entrepreneur-First Support",
-    description: "We treat every franchise owner as an industrial partner. Direct technical guidance, machinery spare parts, and territorial rights are backed directly by Kasaragod HQ.",
+    title: "Full Partner Support",
+    description: "We support our factory owners like family partners. Direct technician training, spare parts, and area rights are backed directly by our Kasaragod factory.",
     icon: UsersThree
   }
 ];
@@ -73,13 +73,13 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center max-w-3xl">
           <div className="inline-flex items-center gap-2 bg-[#EAB308]/20 text-[#EAB308] px-3.5 py-1 rounded-full text-xs font-semibold uppercase tracking-wider mb-4">
             <ClockCounterClockwise size={14} weight="bold" />
-            <span>Since 1979</span>
+            <span>Since 1979 in Kerala</span>
           </div>
           <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-white leading-tight">
-            Four Decades of Beverage Craft &amp; Engineering
+            Over 45 Years of Soda Craft &amp; Innovation
           </h1>
           <p className="mt-4 text-base sm:text-lg text-slate-300 leading-relaxed">
-            From single-bicycle village routes to India&apos;s largest decentralized bottling network of 270+ micro-factories.
+            From bicycle deliveries to tea shops in 1979 to over 270+ running soda factories across India today.
           </p>
         </div>
       </section>
@@ -91,22 +91,22 @@ export default function AboutPage() {
             
             <div className="lg:col-span-6 space-y-6">
               <span className="text-xs font-bold uppercase tracking-wider text-[#0E609C] bg-[#0E609C]/10 px-3 py-1 rounded-full">
-                The Freshco Philosophy
+                Our Story
               </span>
               <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 leading-tight">
-                Empowering Local Entrepreneurs through Standardized Micro-Manufacturing
+                Empowering Local Business Owners with Proven Soda Factories
               </h2>
               <p className="text-slate-600 text-base leading-relaxed">
-                Traditional Indian Goli Soda has always held a special place in cultural memory: the satisfying pop of the marble, the explosive release of fizzy aroma, and the sharp bite of roasted jeera or tangy lemon.
+                Traditional Indian Goli Soda has always been loved in every town: the sound of the marble popping, the cold fizzy burst, and the spicy kick of roasted jeera or tart lemon.
               </p>
               <p className="text-slate-600 text-base leading-relaxed">
-                However, for decades the category suffered from unhygienic roadside bottling and lack of quality consistency. Freshco was founded to solve this dilemma: preserving traditional flavors and circular glass packaging while applying modern food-grade SS 304 engineering, precision brix formulation, and strict ISO food safety management.
+                Earlier, roadside soda had cleanliness issues and uneven taste. Freshco solved this by introducing modern food-grade stainless steel machinery, clean water filtration, and certified hygienic syrups, while keeping the classic desi flavor 100% intact.
               </p>
 
               <div className="pt-2 grid grid-cols-2 gap-4">
                 <div className="p-4 rounded-xl bg-slate-50 border border-slate-200">
                   <div className="text-2xl font-black text-slate-900">270+</div>
-                  <div className="text-xs text-slate-500 font-medium mt-0.5">Operating Factories</div>
+                  <div className="text-xs text-slate-500 font-medium mt-0.5">Running Factories</div>
                 </div>
                 <div className="p-4 rounded-xl bg-slate-50 border border-slate-200">
                   <div className="text-2xl font-black text-slate-900">19</div>
@@ -137,10 +137,10 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <h2 className="text-3xl font-extrabold text-slate-900 tracking-tight">
-              Milestones of Growth
+              Our Journey of Growth
             </h2>
             <p className="mt-3 text-slate-600 text-sm sm:text-base">
-              A continuous track record of machine innovation and franchise expansion.
+              A continuous story of machine improvement and factory expansion.
             </p>
           </div>
 
@@ -172,10 +172,10 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center mb-16">
             <h2 className="text-3xl font-extrabold text-slate-900 tracking-tight">
-              Our Core Operating Principles
+              What We Stand For
             </h2>
             <p className="mt-3 text-slate-600 text-sm sm:text-base">
-              Built on sustainability, industrial reliability, and local economic resilience.
+              Committed to hygienic quality, green reusable bottles, and partner success.
             </p>
           </div>
 
@@ -206,16 +206,16 @@ export default function AboutPage() {
           {/* Bottom CTA Card */}
           <div className="mt-16 bg-gradient-to-r from-[#0A3B60] to-[#0E609C] text-white rounded-3xl p-8 sm:p-12 max-w-5xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-6 shadow-xl">
             <div className="space-y-2 text-center sm:text-left">
-              <h3 className="text-2xl font-bold">Ready to be part of our next milestone?</h3>
+              <h3 className="text-2xl font-bold">Ready to start your own factory with Freshco?</h3>
               <p className="text-slate-200 text-sm max-w-lg">
-                Join our 270+ bottling factory owners and bring Freshco Goli Soda to your district.
+                Join our 270+ factory owners across India and bring Freshco Goli Soda to your district.
               </p>
             </div>
             <Link
               href="/franchise"
               className="px-6 py-3.5 rounded-xl bg-[#EAB308] hover:bg-[#ca9a04] text-slate-950 font-bold text-xs shrink-0 transition-colors shadow-sm"
             >
-              Explore Franchise Setup
+              View Factory Setup Details
             </Link>
           </div>
 

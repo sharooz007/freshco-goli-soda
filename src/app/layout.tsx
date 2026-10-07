@@ -15,20 +15,20 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Freshco Goli Soda | India's Premier B2B Bottling Micro-Factory Network",
+  title: "Freshco Goli Soda | Start Your Own Soda Bottling Factory",
   description:
-    "Set up a turnkey Goli Soda bottling micro-factory with ₹11.9 Lakh investment, 85% gross margins, and 4 to 6 months payback. Over 270+ operating factories across 19 states.",
+    "Start your own Goli Soda bottling factory with ₹11.9 Lakh complete setup, 85% profit margin, and investment recovery in 4 to 6 months. Over 270+ active plants across 19 states.",
   keywords: [
     "Goli Soda franchise",
-    "beverage micro-factory",
-    "turnkey bottling plant",
+    "soda factory setup",
+    "soda bottling machine",
     "Freshco Goli Soda",
-    "beverage manufacturing unit India",
-    "marble soda machine"
+    "marble soda manufacturing India",
+    "Goli Soda business"
   ],
   openGraph: {
-    title: "Freshco Goli Soda | Turnkey Bottling Micro-Factory",
-    description: "Launch your own high-margin beverage bottling unit with ₹11.9 Lakhs turnkey setup. 270+ active plants.",
+    title: "Freshco Goli Soda | Complete Soda Bottling Plant Setup",
+    description: "Start your high-profit soda bottling factory with ₹11.9 Lakhs full setup. 270+ running plants in India.",
     type: "website",
     locale: "en_IN",
   }

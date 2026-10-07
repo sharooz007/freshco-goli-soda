@@ -20,7 +20,7 @@ export function LeadCaptureSection() {
     email: "",
     stateDistrict: "",
     investmentTier: "standard",
-    spaceAvailable: "500-1000",
+    spaceAvailable: "400-600",
     message: ""
   });
 
@@ -69,19 +69,19 @@ export function LeadCaptureSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           
-          {/* Left Column: B2B Value Proposition */}
+          {/* Left Column: Value Proposition */}
           <div className="lg:col-span-5 space-y-6">
             <div className="inline-flex items-center gap-2 bg-[#EAB308]/20 text-[#EAB308] px-3.5 py-1 rounded-full text-xs font-semibold uppercase tracking-wider">
               <CurrencyInr size={14} weight="bold" />
-              <span>Investment Blueprint</span>
+              <span>Franchise Project Report</span>
             </div>
 
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white leading-tight">
-              Request Your Turnkey Factory Dossier
+              Get Complete Factory Setup Details
             </h2>
 
             <p className="text-base text-slate-300 leading-relaxed">
-              Receive the complete machine technical specification, P&amp;L projection model, raw material pricing matrix, and district availability assessment directly from Kasaragod HQ.
+              Get the full machine quotation, profit and cost breakdown, syrup price list, and check if your district is available directly from our Kasaragod team.
             </p>
 
             {/* Credibility highlights */}
@@ -91,7 +91,7 @@ export function LeadCaptureSection() {
                   <CheckCircle size={18} weight="fill" />
                 </div>
                 <span className="text-sm font-medium text-slate-200">
-                  Fixed machinery setup starting at ₹11.9 Lakhs
+                  Complete machine setup starting at ₹11.9 Lakhs
                 </span>
               </div>
 
@@ -100,7 +100,7 @@ export function LeadCaptureSection() {
                   <CheckCircle size={18} weight="fill" />
                 </div>
                 <span className="text-sm font-medium text-slate-200">
-                  Full capital recovery estimated within 4 to 6 months
+                  Full investment recovery in 4 to 6 months
                 </span>
               </div>
 
@@ -109,7 +109,7 @@ export function LeadCaptureSection() {
                   <CheckCircle size={18} weight="fill" />
                 </div>
                 <span className="text-sm font-medium text-slate-200">
-                  100% proprietary flavor syrup supply guarantee
+                  Direct syrup and flavor supply from our factory
                 </span>
               </div>
 
@@ -118,7 +118,7 @@ export function LeadCaptureSection() {
                   <CheckCircle size={18} weight="fill" />
                 </div>
                 <span className="text-sm font-medium text-slate-200">
-                  Exclusive district-level territorial licensing rights
+                  Single-owner rights for your district or taluka
                 </span>
               </div>
             </div>
@@ -130,17 +130,17 @@ export function LeadCaptureSection() {
                 className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/15 text-white px-4 py-2.5 rounded-xl text-xs font-semibold transition-colors border border-white/10"
               >
                 <PhoneCall size={16} weight="bold" className="text-[#EAB308]" />
-                <span>Hotline: +91 9659 100 500</span>
+                <span>Direct Helpline: +91 9659 100 500</span>
               </a>
 
               <a
-                href="https://wa.me/919659100500?text=Hello%20Freshco%20Team,%20I%20am%20interested%20in%20the%2011.9L%20micro-factory%20setup"
+                href="https://wa.me/919659100500?text=Hello%20Freshco%20Team,%20I%20am%20interested%20in%20the%2011.9L%20soda%20factory%20setup"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 bg-[#25D366]/20 hover:bg-[#25D366]/30 text-[#25D366] px-4 py-2.5 rounded-xl text-xs font-semibold transition-colors border border-[#25D366]/30"
               >
                 <WhatsappLogo size={16} weight="fill" />
-                <span>Instant WhatsApp Desk</span>
+                <span>Chat on WhatsApp</span>
               </a>
             </div>
           </div>
@@ -154,21 +154,21 @@ export function LeadCaptureSection() {
                     <CheckCircle size={36} weight="fill" />
                   </div>
                   <h3 className="text-2xl font-bold text-slate-900">
-                    Application Dossier Dispatched
+                    Details Received Successfully
                   </h3>
                   <p className="text-sm text-slate-600 max-w-md mx-auto leading-relaxed">
-                    Thank you, <span className="font-semibold text-slate-900">{formData.fullName || "Partner"}</span>. Our commercial expansion director will review territorial availability for <span className="font-semibold text-slate-900">{formData.stateDistrict || "your district"}</span> and contact you within 4 hours.
+                    Thank you, <span className="font-semibold text-slate-900">{formData.fullName || "Sir/Madam"}</span>. Our expansion manager will check area availability for <span className="font-semibold text-slate-900">{formData.stateDistrict || "your district"}</span> and call you within 4 hours.
                   </p>
                   
                   <div className="pt-4 flex flex-col sm:flex-row gap-3 justify-center">
                     <a
-                      href={`https://wa.me/919659100500?text=Hi%20Freshco,%20I%20just%20submitted%20the%20franchise%20form%20for%20${encodeURIComponent(formData.stateDistrict || "my city")}.%20My%20name%20is%20${encodeURIComponent(formData.fullName || "Investor")}.`}
+                      href={`https://wa.me/919659100500?text=Hi%20Freshco,%20I%20just%20submitted%20the%20franchise%20form%20for%20${encodeURIComponent(formData.stateDistrict || "my city")}.%20My%20name%20is%20${encodeURIComponent(formData.fullName || "Partner")}.`}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-[#25D366] text-black font-semibold text-xs hover:bg-[#20ba59] transition-colors"
                     >
                       <WhatsappLogo size={18} weight="fill" />
-                      <span>Speed Up via WhatsApp</span>
+                      <span>Chat on WhatsApp Directly</span>
                     </a>
                     
                     <button
@@ -184,10 +184,10 @@ export function LeadCaptureSection() {
                 <form onSubmit={handleSubmit} className="space-y-4">
                   <div className="border-b border-slate-100 pb-4 mb-4">
                     <h3 className="text-xl font-bold text-slate-900">
-                      Franchise Registration &amp; Site Assessment
+                      Franchise Application &amp; Area Check
                     </h3>
                     <p className="text-xs text-slate-500 mt-1">
-                      Direct factory licensing application for new bottling units.
+                      Direct factory inquiry for setting up a new soda bottling plant.
                     </p>
                   </div>
 
@@ -195,7 +195,7 @@ export function LeadCaptureSection() {
                     {/* Full Name */}
                     <div>
                       <label className="block text-xs font-semibold text-slate-700 mb-1.5">
-                        Applicant / Entity Name *
+                        Your Full Name *
                       </label>
                       <input
                         type="text"
@@ -203,7 +203,7 @@ export function LeadCaptureSection() {
                         required
                         value={formData.fullName}
                         onChange={handleChange}
-                        placeholder="e.g. Rajesh Kumar"
+                        placeholder="e.g. Suresh Kumar"
                         className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-[#0E609C] focus:border-transparent bg-slate-50/50"
                       />
                     </div>
@@ -211,7 +211,7 @@ export function LeadCaptureSection() {
                     {/* Mobile Number */}
                     <div>
                       <label className="block text-xs font-semibold text-slate-700 mb-1.5">
-                        WhatsApp Contact Number *
+                        WhatsApp Mobile Number *
                       </label>
                       <input
                         type="tel"
@@ -229,14 +229,14 @@ export function LeadCaptureSection() {
                     {/* Email */}
                     <div>
                       <label className="block text-xs font-semibold text-slate-700 mb-1.5">
-                        Email Address
+                        Email Address (Optional)
                       </label>
                       <input
                         type="email"
                         name="email"
                         value={formData.email}
                         onChange={handleChange}
-                        placeholder="business@example.com"
+                        placeholder="yourname@gmail.com"
                         className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-[#0E609C] focus:border-transparent bg-slate-50/50"
                       />
                     </div>
@@ -244,7 +244,7 @@ export function LeadCaptureSection() {
                     {/* Target State & District */}
                     <div>
                       <label className="block text-xs font-semibold text-slate-700 mb-1.5">
-                        Target District &amp; State *
+                        Your District &amp; State *
                       </label>
                       <div className="relative">
                         <input
@@ -253,7 +253,7 @@ export function LeadCaptureSection() {
                           required
                           value={formData.stateDistrict}
                           onChange={handleChange}
-                          placeholder="e.g. Coimbatore, Tamil Nadu"
+                          placeholder="e.g. Madurai, Tamil Nadu"
                           className="w-full pl-3.5 pr-8 py-2.5 rounded-xl border border-slate-200 text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-[#0E609C] focus:border-transparent bg-slate-50/50"
                         />
                         <MapPin size={16} className="absolute right-3 top-3 text-slate-400 pointer-events-none" />
@@ -265,7 +265,7 @@ export function LeadCaptureSection() {
                     {/* Setup Tier Selection */}
                     <div>
                       <label className="block text-xs font-semibold text-slate-700 mb-1.5">
-                        Investment Model Preferred
+                        Preferred Factory Model
                       </label>
                       <select
                         name="investmentTier"
@@ -273,17 +273,17 @@ export function LeadCaptureSection() {
                         onChange={handleChange}
                         className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-[#0E609C] focus:border-transparent bg-slate-50/50"
                       >
-                        <option value="standard">Micro-Factory Unit (₹11.9 Lakhs) - Recommended</option>
-                        <option value="express">Compact Bottling Unit (₹10.5 Lakhs)</option>
-                        <option value="industrial">High-Output Plant (₹18.5 Lakhs)</option>
-                        <option value="multi-unit">Multi-District Territorial Rights</option>
+                        <option value="standard">Standard Soda Factory (₹11.9 Lakhs) - Most Popular</option>
+                        <option value="express">Starter Bottling Unit (₹10.5 Lakhs)</option>
+                        <option value="industrial">High-Capacity Plant (₹18.5 Lakhs)</option>
+                        <option value="multi-unit">Multiple Districts Dealership</option>
                       </select>
                     </div>
 
                     {/* Commercial Space Available */}
                     <div>
                       <label className="block text-xs font-semibold text-slate-700 mb-1.5">
-                        Available Plant Space
+                        Available Room / Shed Space
                       </label>
                       <div className="relative">
                         <select
@@ -292,10 +292,10 @@ export function LeadCaptureSection() {
                           onChange={handleChange}
                           className="w-full pl-3.5 pr-8 py-2.5 rounded-xl border border-slate-200 text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-[#0E609C] focus:border-transparent bg-slate-50/50"
                         >
-                          <option value="400-600">400 to 600 sq.ft (Optimal for ₹11.9L setup)</option>
-                          <option value="300-450">300 to 450 sq.ft (Starter plant)</option>
-                          <option value="800-1200">800 to 1,200 sq.ft (High-volume setup)</option>
-                          <option value="planning">Identifying location currently</option>
+                          <option value="400-600">400 to 600 sq.ft (Ideal for ₹11.9L setup)</option>
+                          <option value="300-450">300 to 450 sq.ft (For starter plant)</option>
+                          <option value="800-1200">800 to 1,200 sq.ft (For high-capacity plant)</option>
+                          <option value="planning">Currently searching for room</option>
                         </select>
                         <BuildingApartment size={16} className="absolute right-3 top-3 text-slate-400 pointer-events-none" />
                       </div>
@@ -305,14 +305,14 @@ export function LeadCaptureSection() {
                   {/* Operational Notes / Query */}
                   <div>
                     <label className="block text-xs font-semibold text-slate-700 mb-1.5">
-                      Business Background or Specific Requirements (Optional)
+                      Your Current Business or Any Questions (Optional)
                     </label>
                     <textarea
                       name="message"
                       rows={2}
                       value={formData.message}
                       onChange={handleChange}
-                      placeholder="Mention your current retail/distribution network or planned launch month..."
+                      placeholder="Tell us about your current business or planned launch month..."
                       className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-[#0E609C] focus:border-transparent bg-slate-50/50 resize-none"
                     />
                   </div>
@@ -325,20 +325,20 @@ export function LeadCaptureSection() {
                       className="w-full py-3.5 px-6 rounded-xl bg-[#0E609C] hover:bg-[#0A3B60] text-white font-bold text-sm transition-all shadow-md hover:shadow-lg flex items-center justify-center gap-2 group cursor-pointer disabled:opacity-70"
                     >
                       {loading ? (
-                        <span>Processing Application...</span>
+                        <span>Sending Details...</span>
                       ) : (
                         <>
-                          <span>Submit Franchise Application</span>
+                          <span>Send Franchise Application</span>
                           <PaperPlaneTilt size={16} weight="bold" className="group-hover:translate-x-1 transition-transform" />
                         </>
                       )}
                     </button>
                   </div>
 
-                  {/* Privacy & Guarantee note */}
+                  {/* Privacy note */}
                   <div className="flex items-center justify-center gap-2 text-[11px] text-slate-500 pt-2">
                     <ShieldCheck size={14} className="text-emerald-600" />
-                    <span>Direct factory application. Strict territorial non-disclosure guaranteed.</span>
+                    <span>Direct factory application. Your contact details are 100% safe with us.</span>
                   </div>
                 </form>
               )}

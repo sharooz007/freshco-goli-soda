@@ -19,54 +19,54 @@ import {
 
 const CATEGORIES = [
   { id: "all", label: "All Formats" },
-  { id: "reusable-glass", label: "Reusable Glass (₹10)" },
+  { id: "reusable-glass", label: "Marble Glass (₹10)" },
   { id: "cans", label: "Sleek Cans (₹35)" },
-  { id: "single-glass", label: "Single-Serve Glass (₹20)" },
-  { id: "pet-bottles", label: "PET Travel Bottles (₹20)" },
+  { id: "single-glass", label: "Single-Use Glass (₹20)" },
+  { id: "pet-bottles", label: "PET Bottles (₹20)" },
   { id: "jelly-icepop", label: "Jelly & Ice Pops" },
   { id: "energy", label: "Energy & Juices" },
 ];
 
 const PACKAGING_SPECS = [
   {
-    format: "Traditional Reusable Glass (Codd Neck)",
+    format: "Traditional Marble Glass (Codd Neck)",
     volume: "200ml",
     casePack: "24 Bottles / Plastic Crate",
     shelfLife: "90 Days (Returnable)",
     moq: "50 Crates (1,200 bottles)",
-    bestFor: "Local retail, tea shops, bakeries, street dhabas"
+    bestFor: "Local tea shops, bakeries, kirana stores, dhabas"
   },
   {
-    format: "Sleek Aluminum Slim Can",
+    format: "Sleek Aluminium Slim Can",
     volume: "250ml",
-    casePack: "24 Cans / Corrugated Carton",
-    shelfLife: "12 Months (Aseptic)",
-    moq: "100 Cartons (2,400 cans)",
-    bestFor: "Modern retail, QSR chains, supermarkets, export"
+    casePack: "24 Cans / Carton Box",
+    shelfLife: "12 Months",
+    moq: "100 Boxes (2,400 cans)",
+    bestFor: "Supermarkets, cafes, restaurants, export"
   },
   {
-    format: "Single-Serve Crown Cap Flint Glass",
+    format: "One-Time Use Crown Glass Bottle",
     volume: "200ml",
-    casePack: "24 Bottles / Heavy Carton",
-    shelfLife: "6 Months (One-way)",
-    moq: "60 Cartons (1,440 bottles)",
-    bestFor: "Catering, wedding banquets, luxury cafes, dining"
+    casePack: "24 Bottles / Carton Box",
+    shelfLife: "6 Months",
+    moq: "60 Boxes (1,440 bottles)",
+    bestFor: "Weddings, functions, caterers, luxury dining"
   },
   {
-    format: "High-Barrier PET Bottle",
+    format: "Easy-to-Carry PET Bottle",
     volume: "300ml",
-    casePack: "30 Bottles / Shrink Wrap Pack",
+    casePack: "30 Bottles / Shrink Pack",
     shelfLife: "6 Months",
-    moq: "50 Shrink Packs (1,500 bottles)",
-    bestFor: "Highway food courts, transit kiosks, grocery"
+    moq: "50 Packs (1,500 bottles)",
+    bestFor: "Highway food courts, travel points, daily grocery"
   },
   {
     format: "Stand-Up Spout Jelly Pouch",
     volume: "180ml",
-    casePack: "40 Pouches / Display Box",
+    casePack: "40 Pouches / Display Carton",
     shelfLife: "9 Months",
-    moq: "40 Boxes (1,600 pouches)",
-    bestFor: "School canteens, confectionery stores, supermarkets"
+    moq: "40 Cartons (1,600 pouches)",
+    bestFor: "School canteens, sweet shops, bakeries"
   }
 ];
 
@@ -110,13 +110,13 @@ export default function ProductsPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center max-w-3xl">
           <div className="inline-flex items-center gap-2 bg-[#EAB308]/20 text-[#EAB308] px-3.5 py-1 rounded-full text-xs font-semibold uppercase tracking-wider mb-4">
             <Package size={14} weight="bold" />
-            <span>Commercial Beverage Portfolio</span>
+            <span>Freshco Beverage Collection</span>
           </div>
           <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-white leading-tight">
-            100+ Heritage &amp; Contemporary Flavors
+            100+ Desi &amp; Modern Flavours
           </h1>
           <p className="mt-4 text-base sm:text-lg text-slate-300 leading-relaxed">
-            Engineered for high profitability across all consumer price points. Explore our full catalog of reusable codd-neck bottles, sleek retail cans, and travel-ready PET lines.
+            High margins across every price range. Browse our famous marble glass bottles, stylish cans, and easy-to-carry PET bottles.
           </p>
 
           <div className="mt-8 flex flex-wrap justify-center gap-4">
@@ -124,13 +124,13 @@ export default function ProductsPage() {
               href="#packaging-matrix"
               className="px-5 py-2.5 rounded-full bg-white/10 hover:bg-white/15 text-white text-xs font-semibold backdrop-blur-sm border border-white/10 transition-colors"
             >
-              Wholesale Case Pack Specs
+              Box &amp; Crate Packing Specs
             </a>
             <Link
               href="/franchise"
               className="px-5 py-2.5 rounded-full bg-[#EAB308] hover:bg-[#ca9a04] text-slate-950 text-xs font-bold transition-colors"
             >
-              Set Up A Bottling Factory
+              Start Your Own Factory
             </Link>
           </div>
         </div>
@@ -141,7 +141,7 @@ export default function ProductsPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
             
-            {/* Category Pills (Horizontal scrollable) */}
+            {/* Category Pills */}
             <div className="flex items-center gap-1.5 overflow-x-auto pb-1 md:pb-0 scrollbar-none">
               {CATEGORIES.map((cat) => {
                 const isSelected = selectedCategory === cat.id;
@@ -165,7 +165,7 @@ export default function ProductsPage() {
             <div className="relative w-full md:w-72 shrink-0">
               <input
                 type="text"
-                placeholder="Search flavor or ingredients..."
+                placeholder="Search flavour name..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 className="w-full pl-9 pr-4 py-2 rounded-xl text-xs bg-slate-100 border border-slate-200 focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#0E609C] focus:border-transparent text-slate-800"
@@ -196,7 +196,7 @@ export default function ProductsPage() {
 
           {filteredProducts.length === 0 ? (
             <div className="text-center py-20 bg-white rounded-2xl border border-slate-200">
-              <p className="text-base text-slate-600 font-semibold">No beverage matches found</p>
+              <p className="text-base text-slate-600 font-semibold">No flavour matches found</p>
               <p className="text-xs text-slate-400 mt-1">Try clearing your search terms or picking another category.</p>
               <button
                 onClick={() => {
@@ -218,7 +218,6 @@ export default function ProductsPage() {
                   {/* Top Image Stage */}
                   <div className="relative h-64 bg-slate-50 flex items-center justify-center p-6 border-b border-slate-100 group-hover:bg-slate-100/50 transition-colors">
                     
-                    {/* Subtle aura behind bottle */}
                     <div
                       className="absolute inset-x-8 inset-y-6 rounded-full blur-2xl opacity-20 pointer-events-none"
                       style={{ backgroundColor: product.accentColor }}
@@ -276,12 +275,12 @@ export default function ProductsPage() {
                         onClick={() => setActiveModalProduct(product)}
                         className="text-xs font-semibold text-[#0E609C] hover:text-[#0A3B60] inline-flex items-center gap-1 group/btn cursor-pointer"
                       >
-                        <span>Wholesale Specs</span>
+                        <span>Bottle Specs</span>
                         <CaretRight size={13} weight="bold" className="group-hover/btn:translate-x-0.5 transition-transform" />
                       </button>
 
                       <a
-                        href={`https://wa.me/919659100500?text=Hello%20Freshco,%20I%20am%20interested%20in%20commercial%20orders%20for%20${encodeURIComponent(product.name)}`}
+                        href={`https://wa.me/919659100500?text=Hello%20Freshco,%20I%20am%20interested%20in%20wholesale%20orders%20for%20${encodeURIComponent(product.name)}`}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-flex items-center gap-1 bg-[#25D366]/10 text-[#075e54] hover:bg-[#25D366]/20 px-2.5 py-1 rounded-lg text-[11px] font-semibold transition-colors"
@@ -307,13 +306,13 @@ export default function ProductsPage() {
           <div className="max-w-3xl mb-12">
             <div className="inline-flex items-center gap-2 bg-slate-100 text-slate-700 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider mb-2">
               <Truck size={14} weight="bold" />
-              <span>Logistics &amp; Wholesale Factsheet</span>
+              <span>Wholesale Packing Details</span>
             </div>
             <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight">
-              Distributor Packaging &amp; Case Pack Standards
+              Wholesale Box &amp; Crate Packing Standards
             </h2>
             <p className="text-slate-600 text-sm mt-2">
-              Standardized dispatch specifications for distributors, wholesalers, and micro-factory production planning.
+              Standard packing details for distributors, shop suppliers, and factory dispatch.
             </p>
           </div>
 
@@ -321,12 +320,12 @@ export default function ProductsPage() {
             <table className="w-full text-left text-xs sm:text-sm text-slate-600">
               <thead className="bg-slate-100/80 text-slate-900 uppercase font-bold text-[11px] tracking-wider border-b border-slate-200">
                 <tr>
-                  <th className="px-5 py-4">Format / Category</th>
+                  <th className="px-5 py-4">Bottle / Can Format</th>
                   <th className="px-4 py-4">Fill Volume</th>
-                  <th className="px-4 py-4">Case Packaging</th>
-                  <th className="px-4 py-4">Ambient Shelf Life</th>
-                  <th className="px-4 py-4">Recommended MOQ</th>
-                  <th className="px-5 py-4">Primary Channel</th>
+                  <th className="px-4 py-4">Case / Crate Packing</th>
+                  <th className="px-4 py-4">Shelf Life</th>
+                  <th className="px-4 py-4">Minimum Order (MOQ)</th>
+                  <th className="px-5 py-4">Ideal Sales Channel</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-slate-200 bg-white">
@@ -347,16 +346,16 @@ export default function ProductsPage() {
           {/* Bottom Franchise Callout */}
           <div className="mt-12 p-8 rounded-2xl bg-gradient-to-r from-[#0A3B60] to-[#0E609C] text-white flex flex-col md:flex-row items-center justify-between gap-6">
             <div>
-              <h3 className="text-xl font-bold">Want to manufacture these in your own district?</h3>
+              <h3 className="text-xl font-bold">Want to bottle these flavours in your own district?</h3>
               <p className="text-slate-200 text-xs sm:text-sm mt-1 max-w-xl">
-                A Freshco micro-factory gives you turnkey machinery, formula concentrates, and exclusive regional rights to bottle all flavors locally.
+                A Freshco factory gives you complete machines, ready-to-mix syrups, and exclusive rights to bottle all flavours locally in your area.
               </p>
             </div>
             <Link
               href="/franchise"
               className="shrink-0 px-6 py-3 rounded-xl bg-[#EAB308] hover:bg-[#ca9a04] text-slate-950 font-bold text-xs transition-colors"
             >
-              Learn About ₹11.9L Setup
+              View ₹11.9 Lakh Setup Plan
             </Link>
           </div>
 
@@ -400,12 +399,12 @@ export default function ProductsPage() {
                 <span className="font-bold text-slate-900">{activeModalProduct.mrp}</span>
               </div>
               <div className="flex justify-between py-1">
-                <span className="text-slate-500">Fill Capacity:</span>
+                <span className="text-slate-500">Bottle Size:</span>
                 <span className="font-semibold text-slate-900">{activeModalProduct.volume}</span>
               </div>
               <div className="flex justify-between py-1">
                 <span className="text-slate-500">Quality Standard:</span>
-                <span className="font-semibold text-emerald-600">ISO 22000:2018 Certified</span>
+                <span className="font-semibold text-emerald-600">ISO 22000 Certified Hygiene</span>
               </div>
               <div className="flex justify-between py-1">
                 <span className="text-slate-500">Key Taste Notes:</span>
@@ -415,13 +414,13 @@ export default function ProductsPage() {
 
             <div className="mt-6 flex gap-3">
               <a
-                href={`https://wa.me/919659100500?text=Hello%20Freshco,%20I%20would%20like%20a%20distributor%20sample%20kit%20for%20${encodeURIComponent(activeModalProduct.name)}`}
+                href={`https://wa.me/919659100500?text=Hello%20Freshco,%20I%20would%20like%20a%20sample%20crate%20for%20${encodeURIComponent(activeModalProduct.name)}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex-1 py-3 rounded-xl bg-[#25D366] hover:bg-[#20ba59] text-black font-bold text-xs flex items-center justify-center gap-1.5 transition-colors"
               >
                 <WhatsappLogo size={16} weight="fill" />
-                <span>Order Sample Crate</span>
+                <span>Order Sample Crate on WhatsApp</span>
               </a>
               <button
                 onClick={() => setActiveModalProduct(null)}

@@ -13,50 +13,50 @@ import Link from "next/link";
 const PROCESS_STEPS = [
   {
     step: "01",
-    title: "Site Layout & Utility Planning",
+    title: "Room Setup & Floor Plan",
     duration: "Days 1 to 3",
-    description: "Our engineering team reviews your 400 to 600 sq.ft commercial space and designs an optimized workflow layout separating raw syrup blending, carbonation bottling, and crate staging.",
+    description: "Our technical team checks your 400 to 600 sq.ft room and provides an easy layout plan for bottle washing, syrup mixing, filling, and crate storage.",
     icon: Compass,
     highlights: [
-      "AutoCAD floor plan customization",
-      "Power (5 HP) and water hookup verification",
-      "Hygiene zoning and drainage planning"
+      "Custom room layout plan",
+      "Water and 5 HP electricity check",
+      "Proper drainage and washing area"
     ]
   },
   {
     step: "02",
-    title: "Machinery Delivery & Installation",
+    title: "Machine Delivery & Fitting",
     duration: "Days 4 to 7",
-    description: "Direct dispatch of food-grade SS 304 pneumatic bottling equipment, syrup preparation tanks, and industrial carbonation manifold from Kasaragod HQ directly to your facility.",
+    description: "Direct dispatch of food-grade SS 304 soda machines, cooling chiller, syrup tanks, and gas fittings from our Kasaragod factory right to your site.",
     icon: GearSix,
     highlights: [
-      "Food-grade SS 304 contact components",
-      "High-pressure carbonation manifold calibration",
-      "Pneumatic marble-sealing assembly setup"
+      "Clean food-grade steel parts",
+      "Accurate gas pressure regulators",
+      "Marble bottle sealing assembly"
     ]
   },
   {
     step: "03",
-    title: "Recipe Blending & Operator Training",
+    title: "Hands-on Practical Training",
     duration: "Days 8 to 11",
-    description: "7 days of hands-on technician training on your plant floor. Learn exact brix calibration, syrup emulsification, CO2 pressure equilibrium, and daily CIP cleaning protocols.",
+    description: "7 days of direct training by our technician at your plant. Learn syrup mixing, gas filling, bottle washing, and daily machine maintenance.",
     icon: GraduationCap,
     highlights: [
-      "Master syrup dosing & brix measurement",
-      "Pressure safety & valve maintenance",
-      "Food safety hygiene log documentation"
+      "Learn exact syrup formulas",
+      "Safe machine operating steps",
+      "Daily hygiene and cleaning tips"
     ]
   },
   {
     step: "04",
-    title: "Commercial Launch & Distribution",
+    title: "Start Production & Supply",
     duration: "Days 12 to 14",
-    description: "Begin commercial bottling of 3,000 to 5,000 bottles daily. Roll out to regional tea shops, supermarkets, and catering networks under your exclusive territorial licensing.",
+    description: "Start bottling 3,000 to 5,000 bottles every day. Start supplying to tea stalls, bakeries, grocery shops, and caterers in your exclusive area.",
     icon: RocketLaunch,
     highlights: [
-      "Branded crates & initial bottle allocation",
-      "Territorial exclusivity activation",
-      "Retail POP marketing collaterals provided"
+      "Branded crates & initial bottles included",
+      "Single-owner area selling rights",
+      "Shop posters & marketing banners"
     ]
   }
 ];
@@ -69,13 +69,13 @@ export function FactoryProcess() {
         <div className="text-center max-w-3xl mx-auto mb-16">
           <div className="inline-flex items-center gap-2 bg-[#0E609C]/10 text-[#0E609C] px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider mb-3">
             <Clock size={14} weight="bold" />
-            <span>Turnkey Execution Roadmap</span>
+            <span>14-Day Setup Process</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight">
-            From Bare Site to Live Production in 14 Days
+            From Empty Room to Running Factory in 14 Days
           </h2>
           <p className="mt-4 text-base sm:text-lg text-slate-600">
-            A battle-tested deployment methodology proven across 270+ operating bottling facilities across India and overseas.
+            A simple step-by-step setup proven across 270+ soda factories in India.
           </p>
         </div>
 
@@ -134,7 +134,7 @@ export function FactoryProcess() {
               </div>
               <div>
                 <p className="text-xs font-semibold text-slate-900">Food Safety Compliant</p>
-                <p className="text-[11px] text-slate-500">ISO 22000:2018 Certified Engineering</p>
+                <p className="text-[11px] text-slate-500">ISO 22000 Certified Hygiene</p>
               </div>
             </div>
 
@@ -143,8 +143,8 @@ export function FactoryProcess() {
                 <Package size={22} weight="bold" />
               </div>
               <div>
-                <p className="text-xs font-semibold text-slate-900">Zero Supply Chain Bottlenecks</p>
-                <p className="text-[11px] text-slate-500">Centralized flavor concentrates & glass supply</p>
+                <p className="text-xs font-semibold text-slate-900">Regular Raw Material Supply</p>
+                <p className="text-[11px] text-slate-500">Direct syrup and bottle dispatch from Kasaragod</p>
               </div>
             </div>
           </div>
@@ -154,7 +154,7 @@ export function FactoryProcess() {
               href="/franchise"
               className="inline-flex items-center justify-center px-6 py-3 rounded-xl bg-[#0E609C] hover:bg-[#0A3B60] text-white text-sm font-semibold transition-colors shadow-sm"
             >
-              Explore ₹11.9L Franchise Blueprint
+              View ₹11.9 Lakh Setup Plan
             </Link>
           </div>
         </div>

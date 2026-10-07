@@ -18,17 +18,17 @@ export function Footer() {
               />
             </div>
             <p className="text-sm text-slate-400 leading-relaxed max-w-sm">
-              India&apos;s fastest growing beverage network. Standardized micro-factory engineering delivering high-margin traditional Goli Soda production across 270+ global locations.
+              India&apos;s leading beverage network. Complete soda bottling factory setups helping local business owners earn good monthly profits across 270+ active plants.
             </p>
             <div className="flex items-center gap-4 pt-2">
               <a
-                href="https://wa.me/919659100500?text=Hello%20Freshco%20Team,%20I%20am%20interested%20in%20a%20franchise%20setup"
+                href="https://wa.me/919659100500?text=Hello%20Freshco%20Team,%20I%20am%20interested%20in%20starting%20a%20factory%20setup"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 bg-[#25D366] text-black font-semibold px-4 py-2 rounded-full text-xs hover:bg-[#20ba59] transition-colors"
               >
                 <WhatsappLogo size={16} weight="fill" />
-                <span>WhatsApp Franchise Desk</span>
+                <span>WhatsApp Franchise Helpline</span>
               </a>
             </div>
           </div>
@@ -36,32 +36,32 @@ export function Footer() {
           {/* Core Navigation */}
           <div>
             <h4 className="text-white text-sm font-semibold tracking-wide mb-4">
-              Navigation
+              Quick Links
             </h4>
             <ul className="space-y-2.5 text-sm">
               <li>
                 <Link href="/" className="hover:text-white transition-colors">
-                  Home Overview
+                  Home
                 </Link>
               </li>
               <li>
                 <Link href="/products" className="hover:text-white transition-colors">
-                  Product Portfolio (100+ Flavors)
+                  All Flavours (100+ Varieties)
                 </Link>
               </li>
               <li>
                 <Link href="/franchise" className="hover:text-white transition-colors">
-                  Franchise & Factory Model
+                  Franchise &amp; Setup Details
                 </Link>
               </li>
               <li>
                 <Link href="/about" className="hover:text-white transition-colors">
-                  Our Heritage & Scale
+                  Our Story &amp; Journey
                 </Link>
               </li>
               <li>
                 <Link href="/contact" className="hover:text-white transition-colors">
-                  Plant Visit & Contact
+                  Factory Visit &amp; Contact
                 </Link>
               </li>
             </ul>
@@ -70,51 +70,50 @@ export function Footer() {
           {/* Product Lines */}
           <div>
             <h4 className="text-white text-sm font-semibold tracking-wide mb-4">
-              Packaging Lines
+              Bottle &amp; Can Formats
             </h4>
             <ul className="space-y-2.5 text-sm text-slate-400">
-              <li>Traditional Glass Goli Soda</li>
-              <li>Tamper-proof Single-Serve Glass</li>
-              <li>Sleek 250ml Aluminum Cans</li>
-              <li>High-Barrier PET Travel Bottles</li>
-              <li>Chewable Fruit Jelly Drinks</li>
-              <li>Freshco Frozen Ice Pops</li>
+              <li>Traditional Marble Glass Goli Soda</li>
+              <li>One-Time Use Glass Bottles</li>
+              <li>Modern 250ml Aluminium Cans</li>
+              <li>Easy-to-Carry PET Bottles</li>
+              <li>Fruit Jelly Drinks &amp; Ice Pops</li>
             </ul>
           </div>
 
-          {/* Factory Headquarters */}
+          {/* Kasaragod Plant Address */}
           <div>
             <h4 className="text-white text-sm font-semibold tracking-wide mb-4">
-              Central Operations
+              Factory Location
             </h4>
-            <div className="space-y-3 text-sm text-slate-400">
-              <div className="flex items-start gap-2.5">
+            <address className="not-italic text-sm text-slate-400 space-y-2">
+              <div className="flex items-start gap-2">
                 <MapPin size={18} className="text-[#EAB308] shrink-0 mt-0.5" />
                 <span>
-                  Teago Enterprise / Freshco Plants<br />
-                  Pullintady, Nekraje P.O., Kasaragod,<br />
-                  Kerala, India, Pin: 671543
+                  Pullintady, Nekraje PO,<br />
+                  Kasaragod District,<br />
+                  Kerala, India - 671543
                 </span>
               </div>
-              <div className="flex items-center gap-2.5">
-                <Phone size={18} className="text-[#EAB308] shrink-0" />
-                <a href="tel:+919659100500" className="hover:text-white transition-colors">
+              <div className="flex items-center gap-2 pt-2 text-white">
+                <Phone size={16} className="text-[#EAB308]" />
+                <a href="tel:+919659100500" className="hover:underline">
                   +91 9659 100 500
                 </a>
               </div>
-              <div className="flex items-center gap-2.5">
-                <Envelope size={18} className="text-[#EAB308] shrink-0" />
-                <a href="mailto:info@freshcogolisoda.com" className="hover:text-white transition-colors">
-                  info@freshcogolisoda.com
+              <div className="flex items-center gap-2">
+                <Envelope size={16} className="text-[#EAB308]" />
+                <a href="mailto:contact@freshcogolisoda.com" className="hover:underline text-xs">
+                  contact@freshcogolisoda.com
                 </a>
               </div>
-            </div>
+            </address>
           </div>
         </div>
 
-        {/* Certifications & Bottom Rights */}
+        {/* Certifications and Copyright Bottom */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
-          <div className="flex flex-wrap items-center gap-6 text-slate-400">
+          <div className="flex flex-wrap items-center gap-4 sm:gap-6 justify-center">
             <span className="inline-flex items-center gap-1.5">
               <ShieldCheck size={16} className="text-emerald-400" />
               <span>ISO 9001:2015 Certified</span>

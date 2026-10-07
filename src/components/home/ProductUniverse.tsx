@@ -12,13 +12,13 @@ export function ProductUniverse() {
           <div className="max-w-2xl">
             <div className="inline-flex items-center gap-2 bg-[#0E609C]/10 text-[#0E609C] px-3.5 py-1.5 rounded-full text-xs font-semibold mb-3">
               <Tag size={14} weight="bold" />
-              <span>Multi-Format Packaging Lines</span>
+              <span>Bottle &amp; Can Varieties</span>
             </div>
             <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-slate-900 leading-tight">
-              One Factory Setup. Six High-Margin Beverage Formats.
+              One Factory Setup. Six Popular Beverage Formats.
             </h2>
             <p className="text-slate-600 mt-2 text-base leading-relaxed">
-              Standardized plant machinery engineered to produce across diverse price points from ₹10 street refreshers to premium retail cans.
+              Produce everything from ₹10 daily street sodas to premium retail cans in your own plant.
             </p>
           </div>
 
@@ -26,32 +26,32 @@ export function ProductUniverse() {
             href="/products"
             className="inline-flex items-center gap-2 text-sm font-semibold text-[#0E609C] hover:text-[#0A3B60] group self-start"
           >
-            <span>View All 100+ Product Lines</span>
+            <span>View All 100+ Flavour Options</span>
             <ArrowRight size={16} weight="bold" className="group-hover:translate-x-1 transition-transform" />
           </Link>
         </div>
 
-        {/* Bento Grid (5 purposeful cells with diverse visual backgrounds) */}
+        {/* Bento Grid */}
         <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
           
           {/* Bento Cell 1 (8 cols): Classic Reusable Goli Soda */}
           <div className="md:col-span-7 lg:col-span-8 bg-gradient-to-br from-slate-900 via-[#0A3B60] to-slate-900 text-white rounded-2xl p-6 sm:p-10 flex flex-col justify-between overflow-hidden relative min-h-[380px] shadow-sm">
             <div className="relative z-10 max-w-md">
               <span className="text-[11px] font-bold uppercase tracking-wider text-[#EAB308] bg-[#EAB308]/20 px-2.5 py-1 rounded-full">
-                Flagship Line • ₹10 MRP
+                Most Popular • ₹10 MRP
               </span>
               <h3 className="text-2xl sm:text-3xl font-bold mt-3 text-white">
-                Traditional Glass Goli Soda
+                Traditional Marble Glass Goli Soda
               </h3>
               <p className="text-sm text-slate-300 mt-2 leading-relaxed">
-                Classic marble-seal 200ml glass bottle with zero packaging waste, 100% circular returnability, and immense local margin retention.
+                Classic 200ml marble soda glass bottle. Clean, reusable, loved across towns, and brings highest repeating daily profit for shops.
               </p>
               <div className="flex flex-wrap gap-2 mt-4">
                 <span className="text-xs bg-white/10 backdrop-blur-sm px-3 py-1 rounded-full text-slate-200">
-                  33+ Heritage Flavors
+                  33+ Desi Flavours
                 </span>
                 <span className="text-xs bg-white/10 backdrop-blur-sm px-3 py-1 rounded-full text-slate-200">
-                  High Repeat Rate
+                  High Repeat Sales
                 </span>
               </div>
             </div>
@@ -61,7 +61,7 @@ export function ProductUniverse() {
                 href="/products?category=reusable-glass"
                 className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#EAB308] hover:underline"
               >
-                <span>Browse Glass Flavors</span>
+                <span>Browse Glass Flavours</span>
                 <ArrowRight size={14} weight="bold" />
               </Link>
             </div>
@@ -81,13 +81,13 @@ export function ProductUniverse() {
           <div className="md:col-span-5 lg:col-span-4 bg-gradient-to-br from-rose-50 via-pink-50/50 to-white rounded-2xl p-6 sm:p-8 flex flex-col justify-between border border-pink-100 relative min-h-[380px] overflow-hidden shadow-2xs">
             <div>
               <span className="text-[11px] font-bold uppercase tracking-wider text-rose-600 bg-rose-100 px-2.5 py-1 rounded-full">
-                Retail Expansion • ₹35 MRP
+                Modern Retail • ₹35 MRP
               </span>
               <h3 className="text-xl sm:text-2xl font-bold mt-3 text-slate-900">
-                Sleek 250ml Cans
+                Sleek 250ml Aluminium Cans
               </h3>
               <p className="text-xs sm:text-sm text-slate-600 mt-1.5 leading-relaxed">
-                Aseptic aluminum slim cans engineered for supermarkets, quick service chains, and transit retail with 12-month ambient shelf life.
+                Lightweight slim cans perfect for supermarkets, bakeries, cafes, and highway stops with 12 months shelf life.
               </p>
             </div>
 
@@ -104,7 +104,7 @@ export function ProductUniverse() {
               href="/products?category=cans"
               className="inline-flex items-center gap-1.5 text-xs font-semibold text-rose-700 hover:underline"
             >
-              <span>Explore Canned Line</span>
+              <span>Explore Can Varieties</span>
               <ArrowRight size={14} weight="bold" />
             </Link>
           </div>
@@ -113,13 +113,13 @@ export function ProductUniverse() {
           <div className="md:col-span-4 bg-gradient-to-br from-amber-50 via-yellow-50/40 to-white rounded-2xl p-6 sm:p-7 border border-amber-200/60 flex flex-col justify-between relative min-h-[320px] shadow-2xs">
             <div>
               <span className="text-[11px] font-bold uppercase tracking-wider text-amber-700 bg-amber-100 px-2.5 py-1 rounded-full">
-                Cafes & Events • ₹20 MRP
+                Catering &amp; Events • ₹20 MRP
               </span>
               <h3 className="text-xl font-bold mt-3 text-slate-900">
-                Crown Cap Single Glass
+                One-Time Use Crown Glass
               </h3>
               <p className="text-xs text-slate-600 mt-1">
-                Disposable non-returnable flint glass bottles for weddings, catering, and upscale restaurant tables.
+                Single-use glass bottles with crown caps. Popular for weddings, parties, restaurants, and catering orders.
               </p>
             </div>
 
@@ -136,7 +136,7 @@ export function ProductUniverse() {
               href="/products?category=single-glass"
               className="text-xs font-semibold text-amber-800 hover:underline inline-flex items-center gap-1"
             >
-              <span>View Specifications</span>
+              <span>View Bottle Details</span>
               <ArrowRight size={14} weight="bold" />
             </Link>
           </div>
@@ -145,13 +145,13 @@ export function ProductUniverse() {
           <div className="md:col-span-4 bg-gradient-to-br from-emerald-50 via-slate-50 to-white rounded-2xl p-6 sm:p-7 border border-emerald-100 flex flex-col justify-between relative min-h-[320px] shadow-2xs">
             <div>
               <span className="text-[11px] font-bold uppercase tracking-wider text-emerald-700 bg-emerald-100 px-2.5 py-1 rounded-full">
-                Highway & Transit • ₹20 MRP
+                Highway &amp; Transit • ₹20 MRP
               </span>
               <h3 className="text-xl font-bold mt-3 text-slate-900">
-                High-Barrier PET Bottles
+                Easy-to-Carry PET Bottles
               </h3>
               <p className="text-xs text-slate-600 mt-1">
-                300ml lightweight bottles with carbonation-lock caps for highway dhabas and convenience stores.
+                300ml travel-friendly bottles with tight carbonation caps for highway dhabas, bus stands, and general stores.
               </p>
             </div>
 
@@ -168,7 +168,7 @@ export function ProductUniverse() {
               href="/products?category=pet-bottles"
               className="text-xs font-semibold text-emerald-800 hover:underline inline-flex items-center gap-1"
             >
-              <span>View PET Varieties</span>
+              <span>View PET Range</span>
               <ArrowRight size={14} weight="bold" />
             </Link>
           </div>
@@ -177,13 +177,13 @@ export function ProductUniverse() {
           <div className="md:col-span-4 bg-gradient-to-br from-cyan-50 via-blue-50/50 to-white rounded-2xl p-6 sm:p-7 border border-cyan-100 flex flex-col justify-between relative min-h-[320px] shadow-2xs">
             <div>
               <span className="text-[11px] font-bold uppercase tracking-wider text-cyan-700 bg-cyan-100 px-2.5 py-1 rounded-full">
-                Snacking Drinks • ₹10 - ₹25
+                Kids &amp; Youth • ₹10 to ₹25
               </span>
               <h3 className="text-xl font-bold mt-3 text-slate-900">
-                Jelly Drinks & Ice Pops
+                Fruit Jelly Drinks &amp; Ice Pops
               </h3>
               <p className="text-xs text-slate-600 mt-1">
-                Innovative chewable fruit konjac pouches and multi-flavor freeze-and-snap ice pops for youth appeal.
+                Fun fruit jelly pouches and colorful summer ice pops that sell very fast in school canteens and kirana shops.
               </p>
             </div>
 

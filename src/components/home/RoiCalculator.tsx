@@ -10,8 +10,7 @@ export function RoiCalculator() {
 
   const workingDays = 26;
   const monthlyVolume = dailyBottles * workingDays;
-  const monthlyGrossRevenue = monthlyVolume * 10; // ₹10 MRP baseline
-  const estimatedOperatingCost = 75000; // Power, labor, packaging overhead
+  const estimatedOperatingCost = 75000; // Electricity, 2 operators, basic overhead
   const monthlyNetProfit = Math.round(monthlyVolume * netMarginPerBottle - estimatedOperatingCost);
   const investment = 1190000; // ₹11.9 Lakhs
   const paybackMonths = monthlyNetProfit > 0 ? (investment / monthlyNetProfit).toFixed(1) : "0";
@@ -24,13 +23,13 @@ export function RoiCalculator() {
         <div className="max-w-2xl mb-12">
           <div className="inline-flex items-center gap-2 bg-[#0E609C]/10 text-[#0E609C] px-3.5 py-1.5 rounded-full text-xs font-semibold mb-3">
             <Calculator size={14} weight="bold" />
-            <span>Plant Investment Economics</span>
+            <span>Profit &amp; Earnings Calculator</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-slate-900 leading-tight">
-            Calculate Your Micro-Factory Returns
+            Calculate Your Monthly Factory Income
           </h2>
           <p className="text-slate-600 mt-2 text-base leading-relaxed">
-            Model your projected monthly cash flow and capital recovery based on local retail demand.
+            See how much you can earn every month based on daily bottle sales in your local area.
           </p>
         </div>
 
@@ -44,7 +43,7 @@ export function RoiCalculator() {
             <div>
               <div className="flex items-center justify-between mb-3">
                 <label className="text-sm font-semibold text-slate-800">
-                  Target Daily Bottling Capacity
+                  Daily Bottles Produced
                 </label>
                 <span className="text-base font-bold text-[#0E609C] bg-[#0E609C]/10 px-3 py-1 rounded-full">
                   {dailyBottles.toLocaleString()} bottles / day
@@ -60,9 +59,9 @@ export function RoiCalculator() {
                 className="w-full h-2.5 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-[#0E609C]"
               />
               <div className="flex justify-between text-xs text-slate-400 mt-2">
-                <span>1,500 (Single Shift)</span>
-                <span>4,000 (Standard Setup)</span>
-                <span>8,000 (Double Shift)</span>
+                <span>1,500 (Small batch)</span>
+                <span>3,500 (Normal factory day)</span>
+                <span>8,000 (Full double shift)</span>
               </div>
             </div>
 
@@ -70,7 +69,7 @@ export function RoiCalculator() {
             <div>
               <div className="flex items-center justify-between mb-3">
                 <label className="text-sm font-semibold text-slate-800">
-                  Net Operator Margin per Bottle
+                  Your Net Profit Margin per Bottle
                 </label>
                 <span className="text-base font-bold text-[#0E609C] bg-[#0E609C]/10 px-3 py-1 rounded-full">
                   ₹{netMarginPerBottle.toFixed(2)} / bottle
@@ -86,33 +85,33 @@ export function RoiCalculator() {
                 className="w-full h-2.5 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-[#0E609C]"
               />
               <div className="flex justify-between text-xs text-slate-400 mt-2">
-                <span>₹2.00 (High Volume Wholesale)</span>
-                <span>₹3.20 (Standard Mixed Route)</span>
-                <span>₹4.50 (Direct Retail Accounts)</span>
+                <span>₹2.00 (Wholesale bulk rate)</span>
+                <span>₹3.20 (Average local market)</span>
+                <span>₹4.50 (Direct shop supply)</span>
               </div>
             </div>
 
-            {/* Turnkey Inclusions Pill List */}
+            {/* Inclusions Pill List */}
             <div className="pt-4 border-t border-slate-100">
               <h4 className="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-3">
-                Turnkey Package Inclusions (₹11.9 Lakh Setup)
+                Key Items Included in ₹11.9 Lakh Setup
               </h4>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-slate-700">
                 <div className="flex items-center gap-2">
                   <ShieldCheck size={16} className="text-emerald-500 shrink-0" />
-                  <span>Semi-Automatic Carbonation Unit</span>
+                  <span>Semi-Automatic Soda Filling Machine</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <ShieldCheck size={16} className="text-emerald-500 shrink-0" />
-                  <span>Pneumatic Stopper Fixtures</span>
+                  <span>Air-Operated Marble Bottle Sealer</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <ShieldCheck size={16} className="text-emerald-500 shrink-0" />
-                  <span>SS 304 Syrup Tanks & Chiller</span>
+                  <span>SS 304 Syrup Tanks &amp; Cooling Chiller</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <ShieldCheck size={16} className="text-emerald-500 shrink-0" />
-                  <span>Exclusive Pin-Code Licensing</span>
+                  <span>Single-Owner Area Selling Rights</span>
                 </div>
               </div>
             </div>
@@ -123,17 +122,17 @@ export function RoiCalculator() {
           <div className="lg:col-span-5 bg-[#0A3B60] text-white p-6 sm:p-8 rounded-2xl shadow-xl flex flex-col justify-between space-y-6">
             <div>
               <span className="text-xs font-semibold uppercase tracking-wider text-[#EAB308]">
-                Financial Projections
+                Estimated Income
               </span>
               <h3 className="text-2xl font-bold mt-1 text-white">
-                Investment Recovery Model
+                Monthly Return Projection
               </h3>
             </div>
 
             <div className="space-y-4">
               <div className="p-4 rounded-xl bg-white/10 backdrop-blur-sm border border-white/10 flex items-center justify-between">
                 <div>
-                  <div className="text-xs text-slate-300">Monthly Volume</div>
+                  <div className="text-xs text-slate-300">Monthly Production</div>
                   <div className="text-xl font-bold text-white mt-0.5">
                     {monthlyVolume.toLocaleString()} bottles
                   </div>
@@ -153,13 +152,13 @@ export function RoiCalculator() {
 
               <div className="p-4 rounded-xl bg-white/10 backdrop-blur-sm border border-white/10 flex items-center justify-between">
                 <div>
-                  <div className="text-xs text-slate-300">Projected Capital Recovery</div>
+                  <div className="text-xs text-slate-300">Investment Recovery Time</div>
                   <div className="text-2xl font-extrabold text-[#EAB308] mt-0.5">
                     {paybackMonths} Months
                   </div>
                 </div>
                 <div className="text-right text-xs text-slate-300">
-                  Against ₹11.9L CapEx
+                  For ₹11.9L Setup
                 </div>
               </div>
             </div>
@@ -169,11 +168,11 @@ export function RoiCalculator() {
                 href="/franchise#apply"
                 className="w-full flex items-center justify-center gap-2 bg-[#EAB308] hover:bg-[#ca9a07] text-slate-900 font-bold py-3.5 px-6 rounded-full text-sm shadow-md transition-colors active:scale-[0.98]"
               >
-                <span>Request Detailed Plant Prospectus</span>
+                <span>Get Full Franchise Details</span>
                 <ArrowRight size={16} weight="bold" />
               </Link>
               <p className="text-[11px] text-slate-400 text-center mt-3">
-                Calculations based on 26 operational days per month and audited factory benchmark data.
+                Calculated on 26 working days in a month based on actual operating plants.
               </p>
             </div>
 
