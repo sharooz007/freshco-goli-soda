@@ -1,211 +1,236 @@
+"use client";
+
+import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Sparkle, Tag } from "@phosphor-icons/react/dist/ssr";
+import { motion, AnimatePresence } from "motion/react";
+import { ArrowRight, Check, Package, Sparkle } from "@phosphor-icons/react";
+
+interface BeverageFormat {
+  id: string;
+  name: string;
+  mrp: string;
+  unitCost: string;
+  volume: string;
+  shelfLife: string;
+  packaging: string;
+  outputRate: string;
+  targetMarkets: string;
+  image: string;
+  description: string;
+  highlights: string[];
+}
+
+const FORMATS: BeverageFormat[] = [
+  {
+    id: "goli-glass",
+    name: "Traditional Marble Glass Goli Soda",
+    mrp: "₹10 MRP",
+    unitCost: "₹1.40",
+    volume: "200ml",
+    shelfLife: "6 Months",
+    packaging: "Reusable Codd-Neck Glass",
+    outputRate: "3,500 to 5,000 units / day",
+    targetMarkets: "Tea stalls, local bakeries, grocery shops, dhabas",
+    image: "/products/group-glass-bottles.webp",
+    description: "The heartbeat of Indian street refreshment. Heavy reusable glass bottles with authentic marble pressure seal that drive high repeat sales and maximum profit for shopkeepers.",
+    highlights: ["Highest daily repeating margin", "33+ Desi regional flavours", "100% reusable bottle cycle"]
+  },
+  {
+    id: "aluminium-can",
+    name: "Sleek 250ml Aluminium Slim Cans",
+    mrp: "₹35 MRP",
+    unitCost: "₹11.20",
+    volume: "250ml",
+    shelfLife: "12 Months",
+    packaging: "Sealed Aluminium Can",
+    outputRate: "2,400 to 4,000 units / day",
+    targetMarkets: "Supermarkets, highway petrol cafes, modern bakeries, cinema kiosks",
+    image: "/products/can-01.webp",
+    description: "Premium beverage format for upscale urban retail. Tamper-evident aluminium cans with 12 months shelf life and modern aesthetic appeal.",
+    highlights: ["12-month ambient shelf life", "Lightweight logistics and freight", "Modern urban shelf presence"]
+  },
+  {
+    id: "crown-glass",
+    name: "One-Time Use Crown Glass Bottles",
+    mrp: "₹20 MRP",
+    unitCost: "₹4.80",
+    volume: "200ml",
+    shelfLife: "9 Months",
+    packaging: "Single-Serve Crown Sealed Flint Glass",
+    outputRate: "3,000 to 4,500 units / day",
+    targetMarkets: "Weddings, banquet catering, family restaurants, events",
+    image: "/products/single-glass-01.webp",
+    description: "Single-serve non-returnable glass bottles with airtight crown caps. Popular for banquet dining, marriage catering, and hotel beverage counters.",
+    highlights: ["Zero bottle return tracking", "Clean tamper-evident seal", "High margin event supply"]
+  },
+  {
+    id: "pet-bottles",
+    name: "Heavy-Duty PET Travel Bottles",
+    mrp: "₹20 MRP",
+    unitCost: "₹4.20",
+    volume: "300ml",
+    shelfLife: "6 Months",
+    packaging: "Carbonation-Retention PET Bottle",
+    outputRate: "4,000 to 6,000 units / day",
+    targetMarkets: "Bus stands, railway canteens, highway dhabas, tourist stops",
+    image: "/products/pet-lahori-jeera.webp",
+    description: "Durable on-the-go bottles with tight carbonation caps designed specifically for long-distance transport and fast highway sales.",
+    highlights: ["Unbreakable transit packaging", "Ideal for transit travellers", "Strong gas retention caps"]
+  },
+  {
+    id: "jelly-icepop",
+    name: "Chewable Fruit Jelly Drinks & Ice Pops",
+    mrp: "₹10 to ₹25",
+    unitCost: "₹2.10",
+    volume: "150ml",
+    shelfLife: "6 Months",
+    packaging: "Spouted Pouches & Tubes",
+    outputRate: "3,000 to 5,000 units / day",
+    targetMarkets: "School canteens, neighborhood kirana stores, summer kiosks",
+    image: "/products/jelly-passion-fruit.webp",
+    description: "Refreshing pulpy fruit pouches with chewable fruit jelly chunks and colorful summer ice pops that sell rapidly among youth.",
+    highlights: ["Instant kid-appeal", "High impulse purchase volume", "Zero carbonation loss"]
+  }
+];
 
 export function ProductUniverse() {
+  const [activeTab, setActiveTab] = useState(0);
+  const current = FORMATS[activeTab];
+
   return (
-    <section className="py-20 bg-white">
+    <section className="py-24 bg-[#FBFBFA] border-b border-stone-200/80 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
-          <div className="max-w-2xl">
-            <div className="inline-flex items-center gap-2 bg-[#0E609C]/10 text-[#0E609C] px-3.5 py-1.5 rounded-full text-xs font-semibold mb-3">
-              <Tag size={14} weight="bold" />
-              <span>Bottle &amp; Can Varieties</span>
-            </div>
-            <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-slate-900 leading-tight">
-              One Factory Setup. Six Popular Beverage Formats.
-            </h2>
-            <p className="text-slate-600 mt-2 text-base leading-relaxed">
-              Produce everything from ₹10 daily street sodas to premium retail cans in your own plant.
-            </p>
-          </div>
-
-          <Link
-            href="/products"
-            className="inline-flex items-center gap-2 text-sm font-semibold text-[#0E609C] hover:text-[#0A3B60] group self-start"
-          >
-            <span>View All 100+ Flavour Options</span>
-            <ArrowRight size={16} weight="bold" className="group-hover:translate-x-1 transition-transform" />
-          </Link>
+        {/* Section Header (Clean vertical stack conforming to taste-skill) */}
+        <div className="max-w-3xl mb-12">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-slate-900 leading-[1.1]">
+            One Factory Setup. Six Beverage Formats.
+          </h2>
+          <p className="mt-3 text-base text-slate-600 leading-relaxed max-w-[60ch]">
+            Produce everything from ₹10 high-repeat daily street soda to modern supermarket slim cans on the same machine infrastructure.
+          </p>
         </div>
 
-        {/* Bento Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
-          
-          {/* Bento Cell 1 (8 cols): Classic Reusable Goli Soda */}
-          <div className="md:col-span-7 lg:col-span-8 bg-gradient-to-br from-slate-900 via-[#0A3B60] to-slate-900 text-white rounded-2xl p-6 sm:p-10 flex flex-col justify-between overflow-hidden relative min-h-[380px] shadow-sm">
-            <div className="relative z-10 max-w-md">
-              <span className="text-[11px] font-bold uppercase tracking-wider text-[#EAB308] bg-[#EAB308]/20 px-2.5 py-1 rounded-full">
-                Most Popular • ₹10 MRP
-              </span>
-              <h3 className="text-2xl sm:text-3xl font-bold mt-3 text-white">
-                Traditional Marble Glass Goli Soda
-              </h3>
-              <p className="text-sm text-slate-300 mt-2 leading-relaxed">
-                Classic 200ml marble soda glass bottle. Clean, reusable, loved across towns, and brings highest repeating daily profit for shops.
-              </p>
-              <div className="flex flex-wrap gap-2 mt-4">
-                <span className="text-xs bg-white/10 backdrop-blur-sm px-3 py-1 rounded-full text-slate-200">
-                  33+ Desi Flavours
+        {/* Format Navigation Tabs */}
+        <div className="flex items-center gap-2 overflow-x-auto pb-4 mb-8 scrollbar-none border-b border-stone-200/90 snap-x">
+          {FORMATS.map((format, idx) => {
+            const isSelected = idx === activeTab;
+            return (
+              <button
+                key={format.id}
+                onClick={() => setActiveTab(idx)}
+                className={`snap-start shrink-0 px-4 py-2.5 rounded-xl text-xs font-semibold transition-all duration-200 flex items-center gap-2 cursor-pointer ${
+                  isSelected
+                    ? "bg-[#0A2E4C] text-white shadow-xs"
+                    : "bg-white text-slate-600 hover:text-slate-900 border border-stone-200 hover:border-stone-300"
+                }`}
+              >
+                <span className="font-mono text-[10px] opacity-70">0{idx + 1}</span>
+                <span>{format.name.split(" ")[0]} {format.name.split(" ")[1]}</span>
+                <span className={`text-[10px] px-1.5 py-0.5 rounded-md font-mono ${
+                  isSelected ? "bg-white/20 text-white" : "bg-stone-100 text-slate-700"
+                }`}>
+                  {format.mrp}
                 </span>
-                <span className="text-xs bg-white/10 backdrop-blur-sm px-3 py-1 rounded-full text-slate-200">
-                  High Repeat Sales
-                </span>
+              </button>
+            );
+          })}
+        </div>
+
+        {/* Active Format Specimen Canvas */}
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={current.id}
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -16 }}
+            transition={{ duration: 0.35 }}
+            className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center bg-white rounded-3xl p-6 sm:p-10 border border-stone-200/90 shadow-xs"
+          >
+            {/* Visual Specimen Display (5 cols) */}
+            <div className="lg:col-span-5 flex items-center justify-center relative min-h-[340px] sm:min-h-[400px] bg-stone-50/70 rounded-2xl p-6 border border-stone-100">
+              <div className="absolute inset-0 grid-blueprint opacity-40 pointer-events-none rounded-2xl" />
+              
+              <div className="relative w-full h-[300px] sm:h-[360px] drop-shadow-xl z-10">
+                <Image
+                  src={current.image}
+                  alt={current.name}
+                  fill
+                  className="object-contain"
+                />
+              </div>
+
+              {/* Float Tag */}
+              <div className="absolute top-4 left-4 z-20 bg-white/95 backdrop-blur-sm border border-stone-200 px-3 py-1 rounded-full text-xs font-mono font-semibold text-slate-800 shadow-2xs">
+                {current.volume} · {current.packaging}
               </div>
             </div>
 
-            <div className="relative z-10 mt-6">
-              <Link
-                href="/products?category=reusable-glass"
-                className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#EAB308] hover:underline"
-              >
-                <span>Browse Glass Flavours</span>
-                <ArrowRight size={14} weight="bold" />
-              </Link>
+            {/* Technical Specification Matrix (7 cols) */}
+            <div className="lg:col-span-7 flex flex-col justify-between space-y-6">
+              <div>
+                <div className="flex items-center gap-3 mb-2 font-mono text-xs">
+                  <span className="text-[#0E609C] font-semibold">{current.mrp}</span>
+                  <span className="text-slate-400">/</span>
+                  <span className="text-emerald-700 font-semibold">Unit Cost: {current.unitCost}</span>
+                </div>
+                <h3 className="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight">
+                  {current.name}
+                </h3>
+                <p className="mt-3 text-sm sm:text-base text-slate-600 leading-relaxed">
+                  {current.description}
+                </p>
+              </div>
+
+              {/* Technical Spec Grid */}
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-2 font-mono text-xs">
+                <div className="p-3 rounded-xl bg-stone-50 border border-stone-200/80">
+                  <span className="text-[10px] text-slate-500 uppercase block">Daily Output</span>
+                  <span className="text-xs font-bold text-slate-900 mt-0.5 block">{current.outputRate}</span>
+                </div>
+                <div className="p-3 rounded-xl bg-stone-50 border border-stone-200/80">
+                  <span className="text-[10px] text-slate-500 uppercase block">Ambient Life</span>
+                  <span className="text-xs font-bold text-slate-900 mt-0.5 block">{current.shelfLife}</span>
+                </div>
+                <div className="p-3 rounded-xl bg-stone-50 border border-stone-200/80 col-span-2 sm:col-span-1">
+                  <span className="text-[10px] text-slate-500 uppercase block">Primary Market</span>
+                  <span className="text-xs font-bold text-slate-900 mt-0.5 block truncate">{current.targetMarkets.split(",")[0]}</span>
+                </div>
+              </div>
+
+              {/* Feature Points */}
+              <div className="space-y-2 pt-2 border-t border-stone-100">
+                {current.highlights.map((h, i) => (
+                  <div key={i} className="flex items-center gap-2.5 text-xs text-slate-700 font-medium">
+                    <span className="w-4 h-4 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center shrink-0">
+                      <Check size={11} weight="bold" />
+                    </span>
+                    <span>{h}</span>
+                  </div>
+                ))}
+              </div>
+
+              {/* Actions */}
+              <div className="flex flex-wrap items-center gap-3 pt-2">
+                <Link
+                  href="/products"
+                  className="inline-flex items-center gap-2 bg-[#0E609C] hover:bg-[#0A2E4C] text-white px-5 py-2.5 rounded-xl font-semibold text-xs shadow-xs transition-colors"
+                >
+                  <span>Explore Flavour Range</span>
+                  <ArrowRight size={14} weight="bold" />
+                </Link>
+                <Link
+                  href="/franchise#apply"
+                  className="inline-flex items-center gap-2 bg-stone-100 hover:bg-stone-200 text-slate-800 px-5 py-2.5 rounded-xl font-semibold text-xs transition-colors"
+                >
+                  <span>Get Machine Specs for This Format</span>
+                </Link>
+              </div>
+
             </div>
-
-            {/* Asset Graphic */}
-            <div className="absolute right-[-10px] bottom-[-20px] sm:right-4 sm:bottom-0 w-64 sm:w-80 h-72 sm:h-96 pointer-events-none opacity-90">
-              <Image
-                src="/products/group-glass-bottles.webp"
-                alt="Freshco Glass Bottles Lineup"
-                fill
-                className="object-contain object-bottom"
-              />
-            </div>
-          </div>
-
-          {/* Bento Cell 2 (4 cols): Sleek Aluminum Cans */}
-          <div className="md:col-span-5 lg:col-span-4 bg-gradient-to-br from-rose-50 via-pink-50/50 to-white rounded-2xl p-6 sm:p-8 flex flex-col justify-between border border-pink-100 relative min-h-[380px] overflow-hidden shadow-2xs">
-            <div>
-              <span className="text-[11px] font-bold uppercase tracking-wider text-rose-600 bg-rose-100 px-2.5 py-1 rounded-full">
-                Modern Retail • ₹35 MRP
-              </span>
-              <h3 className="text-xl sm:text-2xl font-bold mt-3 text-slate-900">
-                Sleek 250ml Aluminium Cans
-              </h3>
-              <p className="text-xs sm:text-sm text-slate-600 mt-1.5 leading-relaxed">
-                Lightweight slim cans perfect for supermarkets, bakeries, cafes, and highway stops with 12 months shelf life.
-              </p>
-            </div>
-
-            <div className="relative h-44 w-full my-3">
-              <Image
-                src="/products/can-01.webp"
-                alt="Sleek Can"
-                fill
-                className="object-contain"
-              />
-            </div>
-
-            <Link
-              href="/products?category=cans"
-              className="inline-flex items-center gap-1.5 text-xs font-semibold text-rose-700 hover:underline"
-            >
-              <span>Explore Can Varieties</span>
-              <ArrowRight size={14} weight="bold" />
-            </Link>
-          </div>
-
-          {/* Bento Cell 3 (4 cols): Single-Serve Tamper Glass */}
-          <div className="md:col-span-4 bg-gradient-to-br from-amber-50 via-yellow-50/40 to-white rounded-2xl p-6 sm:p-7 border border-amber-200/60 flex flex-col justify-between relative min-h-[320px] shadow-2xs">
-            <div>
-              <span className="text-[11px] font-bold uppercase tracking-wider text-amber-700 bg-amber-100 px-2.5 py-1 rounded-full">
-                Catering &amp; Events • ₹20 MRP
-              </span>
-              <h3 className="text-xl font-bold mt-3 text-slate-900">
-                One-Time Use Crown Glass
-              </h3>
-              <p className="text-xs text-slate-600 mt-1">
-                Single-use glass bottles with crown caps. Popular for weddings, parties, restaurants, and catering orders.
-              </p>
-            </div>
-
-            <div className="relative h-40 w-full my-2">
-              <Image
-                src="/products/single-glass-01.webp"
-                alt="Single Serve Glass Bottle"
-                fill
-                className="object-contain"
-              />
-            </div>
-
-            <Link
-              href="/products?category=single-glass"
-              className="text-xs font-semibold text-amber-800 hover:underline inline-flex items-center gap-1"
-            >
-              <span>View Bottle Details</span>
-              <ArrowRight size={14} weight="bold" />
-            </Link>
-          </div>
-
-          {/* Bento Cell 4 (4 cols): PET Travel Bottles */}
-          <div className="md:col-span-4 bg-gradient-to-br from-emerald-50 via-slate-50 to-white rounded-2xl p-6 sm:p-7 border border-emerald-100 flex flex-col justify-between relative min-h-[320px] shadow-2xs">
-            <div>
-              <span className="text-[11px] font-bold uppercase tracking-wider text-emerald-700 bg-emerald-100 px-2.5 py-1 rounded-full">
-                Highway &amp; Transit • ₹20 MRP
-              </span>
-              <h3 className="text-xl font-bold mt-3 text-slate-900">
-                Easy-to-Carry PET Bottles
-              </h3>
-              <p className="text-xs text-slate-600 mt-1">
-                300ml travel-friendly bottles with tight carbonation caps for highway dhabas, bus stands, and general stores.
-              </p>
-            </div>
-
-            <div className="relative h-40 w-full my-2">
-              <Image
-                src="/products/pet-lahori-jeera.webp"
-                alt="PET Travel Bottle"
-                fill
-                className="object-contain"
-              />
-            </div>
-
-            <Link
-              href="/products?category=pet-bottles"
-              className="text-xs font-semibold text-emerald-800 hover:underline inline-flex items-center gap-1"
-            >
-              <span>View PET Range</span>
-              <ArrowRight size={14} weight="bold" />
-            </Link>
-          </div>
-
-          {/* Bento Cell 5 (4 cols): Chewable Jelly Drinks & Ice Pops */}
-          <div className="md:col-span-4 bg-gradient-to-br from-cyan-50 via-blue-50/50 to-white rounded-2xl p-6 sm:p-7 border border-cyan-100 flex flex-col justify-between relative min-h-[320px] shadow-2xs">
-            <div>
-              <span className="text-[11px] font-bold uppercase tracking-wider text-cyan-700 bg-cyan-100 px-2.5 py-1 rounded-full">
-                Kids &amp; Youth • ₹10 to ₹25
-              </span>
-              <h3 className="text-xl font-bold mt-3 text-slate-900">
-                Fruit Jelly Drinks &amp; Ice Pops
-              </h3>
-              <p className="text-xs text-slate-600 mt-1">
-                Fun fruit jelly pouches and colorful summer ice pops that sell very fast in school canteens and kirana shops.
-              </p>
-            </div>
-
-            <div className="relative h-40 w-full my-2">
-              <Image
-                src="/products/jelly-passion-fruit.webp"
-                alt="Jelly Drink"
-                fill
-                className="object-contain"
-              />
-            </div>
-
-            <Link
-              href="/products?category=jelly"
-              className="text-xs font-semibold text-cyan-800 hover:underline inline-flex items-center gap-1"
-            >
-              <span>View Fruit Formats</span>
-              <ArrowRight size={14} weight="bold" />
-            </Link>
-          </div>
-
-        </div>
+          </motion.div>
+        </AnimatePresence>
 
       </div>
     </section>

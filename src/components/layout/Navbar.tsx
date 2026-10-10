@@ -1,9 +1,10 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
+import { useScroll, useMotionValueEvent } from "motion/react";
 import { List, X, PhoneCall, ArrowUpRight } from "@phosphor-icons/react";
 
 const NAV_LINKS = [
@@ -19,22 +20,20 @@ export function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const pathname = usePathname();
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  // Taste-skill compliance: use Motion's useScroll instead of window.addEventListener
+  const { scrollY } = useScroll();
+  useMotionValueEvent(scrollY, "change", (latest) => {
+    setScrolled(latest > 20);
+  });
 
   return (
     <>
       {/* Top B2B Announcement Strip */}
-      <div className="bg-[#0A3B60] text-white text-xs py-2 px-4 text-center font-medium tracking-wide flex items-center justify-center gap-3 border-b border-white/10">
-        <span className="inline-flex items-center gap-1.5 bg-[#EAB308]/20 text-[#EAB308] px-2 py-0.5 rounded-full text-[10px] font-semibold uppercase tracking-wider">
-          New Factory Setup
+      <div className="bg-[#0A2E4C] text-white text-xs py-2 px-4 text-center font-medium tracking-wide flex items-center justify-center gap-3 border-b border-white/10">
+        <span className="inline-flex items-center gap-1.5 bg-[#EAB308]/20 text-[#EAB308] px-2 py-0.5 rounded-full text-[10px] font-semibold uppercase tracking-wider font-mono">
+          Factory Setup 2026
         </span>
-        <span className="hidden sm:inline">
+        <span className="hidden sm:inline text-slate-200">
           Start Your Own Soda Factory in Your District: ₹11.9 Lakh Setup with 85% Margin.
         </span>
         <a
@@ -42,7 +41,7 @@ export function Navbar() {
           className="inline-flex items-center gap-1 font-semibold text-[#EAB308] hover:underline"
         >
           <PhoneCall size={13} weight="bold" />
-          <span>Call: +91 9659 100 500</span>
+          <span>+91 9659 100 500</span>
         </a>
       </div>
 
@@ -50,8 +49,8 @@ export function Navbar() {
       <header
         className={`sticky top-0 z-50 transition-all duration-300 ${
           scrolled
-            ? "bg-white/95 backdrop-blur-md shadow-sm border-b border-slate-200/80"
-            : "bg-white/80 backdrop-blur-sm border-b border-slate-100"
+            ? "bg-white/95 backdrop-blur-md shadow-xs border-b border-stone-200/90"
+            : "bg-[#FBFBFA]/90 backdrop-blur-sm border-b border-stone-200/60"
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-[68px] flex items-center justify-between">
@@ -76,10 +75,10 @@ export function Navbar() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className={`px-3 py-1.5 rounded-full text-sm font-medium transition-colors ${
+                  className={`px-3.5 py-1.5 rounded-full text-sm font-medium transition-colors ${
                     isActive
                       ? "bg-[#0E609C]/10 text-[#0E609C] font-semibold"
-                      : "text-slate-600 hover:text-[#0E609C] hover:bg-slate-50"
+                      : "text-slate-600 hover:text-[#0E609C] hover:bg-white"
                   }`}
                 >
                   {link.label}
@@ -92,7 +91,7 @@ export function Navbar() {
           <div className="hidden sm:flex items-center gap-3">
             <Link
               href="/franchise#apply"
-              className="inline-flex items-center gap-2 bg-[#0E609C] hover:bg-[#0A3B60] text-white px-5 py-2.5 rounded-full text-sm font-semibold tracking-tight shadow-sm hover:shadow transition-all duration-200 active:scale-[0.98]"
+              className="inline-flex items-center gap-2 bg-[#0E609C] hover:bg-[#0A2E4C] text-white px-5 py-2.5 rounded-full text-sm font-semibold tracking-tight shadow-xs hover:shadow transition-all duration-200 active:scale-[0.98]"
             >
               <span>Start a Factory</span>
               <ArrowUpRight size={16} weight="bold" />
@@ -102,7 +101,7 @@ export function Navbar() {
           {/* Mobile Menu Trigger */}
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="md:hidden p-2 rounded-lg text-slate-700 hover:bg-slate-100 transition-colors"
+            className="md:hidden p-2 rounded-lg text-slate-700 hover:bg-stone-100 transition-colors"
             aria-label="Toggle Navigation Menu"
           >
             {mobileOpen ? <X size={24} weight="bold" /> : <List size={24} weight="bold" />}
@@ -111,7 +110,7 @@ export function Navbar() {
 
         {/* Mobile Dropdown Drawer */}
         {mobileOpen && (
-          <div className="md:hidden bg-white border-b border-slate-200 px-4 pt-3 pb-6 shadow-xl animate-in fade-in slide-in-from-top-2 duration-200">
+          <div className="md:hidden bg-white border-b border-stone-200 px-4 pt-3 pb-6 shadow-xl animate-in fade-in slide-in-from-top-2 duration-200">
             <nav className="flex flex-col gap-1.5">
               {NAV_LINKS.map((link) => {
                 const isActive = pathname === link.href;
@@ -123,18 +122,18 @@ export function Navbar() {
                     className={`px-4 py-2.5 rounded-xl text-base font-medium transition-colors ${
                       isActive
                         ? "bg-[#0E609C]/10 text-[#0E609C] font-semibold"
-                        : "text-slate-700 hover:bg-slate-50"
+                        : "text-slate-700 hover:bg-stone-50"
                     }`}
                   >
                     {link.label}
                   </Link>
                 );
               })}
-              <div className="pt-3 mt-2 border-t border-slate-100">
+              <div className="pt-3 mt-2 border-t border-stone-100">
                 <Link
                   href="/franchise#apply"
                   onClick={() => setMobileOpen(false)}
-                  className="w-full flex items-center justify-center gap-2 bg-[#0E609C] text-white py-3 rounded-xl font-semibold text-sm shadow-sm"
+                  className="w-full flex items-center justify-center gap-2 bg-[#0E609C] text-white py-3 rounded-xl font-semibold text-sm shadow-xs"
                 >
                   <span>Start a Factory</span>
                   <ArrowUpRight size={16} weight="bold" />

@@ -4,9 +4,12 @@ import { Phone, Envelope, MapPin, WhatsappLogo, ShieldCheck, Certificate } from 
 
 export function Footer() {
   return (
-    <footer className="bg-[#0A2540] text-slate-300 pt-16 pb-12 border-t border-slate-800">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-slate-800">
+    <footer className="bg-[#0B131E] text-slate-300 pt-16 pb-12 border-t border-white/10 relative overflow-hidden">
+      {/* Blueprint grid texture */}
+      <div className="absolute inset-0 grid-blueprint-dark opacity-20 pointer-events-none" />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-white/10">
           {/* Brand Info & Vision */}
           <div className="lg:col-span-2 space-y-4">
             <div className="relative h-10 w-44">
@@ -35,8 +38,8 @@ export function Footer() {
 
           {/* Core Navigation */}
           <div>
-            <h4 className="text-white text-sm font-semibold tracking-wide mb-4">
-              Quick Links
+            <h4 className="text-white text-xs font-mono uppercase tracking-wider mb-4">
+              Navigation
             </h4>
             <ul className="space-y-2.5 text-sm">
               <li>
@@ -69,21 +72,21 @@ export function Footer() {
 
           {/* Product Lines */}
           <div>
-            <h4 className="text-white text-sm font-semibold tracking-wide mb-4">
-              Bottle &amp; Can Formats
+            <h4 className="text-white text-xs font-mono uppercase tracking-wider mb-4">
+              Beverage Formats
             </h4>
             <ul className="space-y-2.5 text-sm text-slate-400">
               <li>Traditional Marble Glass Goli Soda</li>
-              <li>One-Time Use Glass Bottles</li>
+              <li>One-Time Use Crown Glass</li>
               <li>Modern 250ml Aluminium Cans</li>
-              <li>Easy-to-Carry PET Bottles</li>
+              <li>Heavy-Duty PET Travel Bottles</li>
               <li>Fruit Jelly Drinks &amp; Ice Pops</li>
             </ul>
           </div>
 
           {/* Kasaragod Plant Address */}
           <div>
-            <h4 className="text-white text-sm font-semibold tracking-wide mb-4">
+            <h4 className="text-white text-xs font-mono uppercase tracking-wider mb-4">
               Factory Location
             </h4>
             <address className="not-italic text-sm text-slate-400 space-y-2">
@@ -112,19 +115,19 @@ export function Footer() {
         </div>
 
         {/* Certifications and Copyright Bottom */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500 font-mono">
           <div className="flex flex-wrap items-center gap-4 sm:gap-6 justify-center">
             <span className="inline-flex items-center gap-1.5">
               <ShieldCheck size={16} className="text-emerald-400" />
-              <span>ISO 9001:2015 Certified</span>
+              <span>ISO 9001:2015</span>
             </span>
             <span className="inline-flex items-center gap-1.5">
               <Certificate size={16} className="text-emerald-400" />
-              <span>ISO 22000:2018 Food Safety</span>
+              <span>ISO 22000:2018</span>
             </span>
             <span className="inline-flex items-center gap-1.5">
               <ShieldCheck size={16} className="text-amber-400" />
-              <span>India Excellence Award 2024</span>
+              <span>Excellence Award 2024</span>
             </span>
           </div>
 

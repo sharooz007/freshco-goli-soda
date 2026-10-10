@@ -2,50 +2,50 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { Calculator, ArrowRight, CurrencyInr, ChartLineUp, ShieldCheck } from "@phosphor-icons/react";
+import { ArrowRight, Calculator, Check, CurrencyInr, ShieldCheck, TrendUp } from "@phosphor-icons/react";
 
 export function RoiCalculator() {
   const [dailyBottles, setDailyBottles] = useState(3500);
-  const [netMarginPerBottle, setNetMarginPerBottle] = useState(3.2);
+  const [sellingPrice, setSellingPrice] = useState(6.5); // Factory supply rate to shops
+  const unitCost = 1.40; // Raw material + power + direct labour
 
   const workingDays = 26;
-  const monthlyVolume = dailyBottles * workingDays;
-  const estimatedOperatingCost = 75000; // Electricity, 2 operators, basic overhead
-  const monthlyNetProfit = Math.round(monthlyVolume * netMarginPerBottle - estimatedOperatingCost);
-  const investment = 1190000; // ₹11.9 Lakhs
-  const paybackMonths = monthlyNetProfit > 0 ? (investment / monthlyNetProfit).toFixed(1) : "0";
+  const monthlyBottles = dailyBottles * workingDays;
+  const monthlyRevenue = monthlyBottles * sellingPrice;
+  const monthlyDirectCost = monthlyBottles * unitCost;
+  const monthlyOverhead = 45000; // Estimated 2 operators + factory shed electricity
+  const monthlyNetProfit = Math.round(monthlyRevenue - monthlyDirectCost - monthlyOverhead);
+  
+  const setupCapital = 1190000; // ₹11.9 Lakhs
+  const paybackMonths = monthlyNetProfit > 0 ? (setupCapital / monthlyNetProfit).toFixed(1) : "0";
 
   return (
-    <section className="py-20 bg-slate-50 border-b border-slate-200/80">
+    <section className="py-24 bg-white border-b border-stone-200/80 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Section Header */}
-        <div className="max-w-2xl mb-12">
-          <div className="inline-flex items-center gap-2 bg-[#0E609C]/10 text-[#0E609C] px-3.5 py-1.5 rounded-full text-xs font-semibold mb-3">
-            <Calculator size={14} weight="bold" />
-            <span>Profit &amp; Earnings Calculator</span>
-          </div>
-          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-slate-900 leading-tight">
+        {/* Section Header (Vertical Stack conforming to taste-skill) */}
+        <div className="max-w-3xl mb-14">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-slate-900 leading-[1.1]">
             Calculate Your Monthly Factory Income
           </h2>
-          <p className="text-slate-600 mt-2 text-base leading-relaxed">
-            See how much you can earn every month based on daily bottle sales in your local area.
+          <p className="mt-3 text-base text-slate-600 leading-relaxed max-w-[60ch]">
+            Real per-bottle cost breakdown and net return projections based on verified performance across 270+ operating Indian bottling plants.
           </p>
         </div>
 
-        {/* Interactive Calculator Bento */}
+        {/* Financial Terminal Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           
-          {/* Controls Column (7 cols) */}
-          <div className="lg:col-span-7 bg-white p-6 sm:p-8 rounded-2xl border border-slate-200 shadow-2xs space-y-8">
+          {/* Left Column: Interactive Factory Controls (7 cols) */}
+          <div className="lg:col-span-7 bg-[#FBFBFA] rounded-3xl p-6 sm:p-10 border border-stone-200/90 shadow-2xs space-y-8">
             
-            {/* Slider 1: Daily Production */}
+            {/* Slider 1: Daily Production Capacity */}
             <div>
               <div className="flex items-center justify-between mb-3">
-                <label className="text-sm font-semibold text-slate-800">
-                  Daily Bottles Produced
+                <label className="text-sm font-semibold text-slate-900">
+                  Daily Production Output
                 </label>
-                <span className="text-base font-bold text-[#0E609C] bg-[#0E609C]/10 px-3 py-1 rounded-full">
+                <span className="font-mono text-sm font-bold text-[#0E609C] bg-[#0E609C]/10 px-3 py-1 rounded-full">
                   {dailyBottles.toLocaleString()} bottles / day
                 </span>
               </div>
@@ -56,123 +56,160 @@ export function RoiCalculator() {
                 step="250"
                 value={dailyBottles}
                 onChange={(e) => setDailyBottles(Number(e.target.value))}
-                className="w-full h-2.5 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-[#0E609C]"
+                className="w-full h-2.5 bg-stone-200 rounded-lg appearance-none cursor-pointer accent-[#0E609C]"
               />
-              <div className="flex justify-between text-xs text-slate-400 mt-2">
+              <div className="flex justify-between text-xs text-slate-500 font-mono mt-2.5">
                 <span>1,500 (Small batch)</span>
-                <span>3,500 (Normal factory day)</span>
-                <span>8,000 (Full double shift)</span>
+                <span>3,500 (Standard factory)</span>
+                <span>8,000 (Two shift max)</span>
               </div>
             </div>
 
-            {/* Slider 2: Average Net Margin per Bottle */}
+            {/* Slider 2: Wholesale Rate to Retailers */}
             <div>
               <div className="flex items-center justify-between mb-3">
-                <label className="text-sm font-semibold text-slate-800">
-                  Your Net Profit Margin per Bottle
+                <label className="text-sm font-semibold text-slate-900">
+                  Your Wholesale Price to Local Shops
                 </label>
-                <span className="text-base font-bold text-[#0E609C] bg-[#0E609C]/10 px-3 py-1 rounded-full">
-                  ₹{netMarginPerBottle.toFixed(2)} / bottle
+                <span className="font-mono text-sm font-bold text-[#0E609C] bg-[#0E609C]/10 px-3 py-1 rounded-full">
+                  ₹{sellingPrice.toFixed(2)} / bottle (MRP ₹10.00)
                 </span>
               </div>
               <input
                 type="range"
-                min="2.0"
-                max="4.5"
-                step="0.1"
-                value={netMarginPerBottle}
-                onChange={(e) => setNetMarginPerBottle(Number(e.target.value))}
-                className="w-full h-2.5 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-[#0E609C]"
+                min="5.5"
+                max="7.5"
+                step="0.25"
+                value={sellingPrice}
+                onChange={(e) => setSellingPrice(Number(e.target.value))}
+                className="w-full h-2.5 bg-stone-200 rounded-lg appearance-none cursor-pointer accent-[#0E609C]"
               />
-              <div className="flex justify-between text-xs text-slate-400 mt-2">
-                <span>₹2.00 (Wholesale bulk rate)</span>
-                <span>₹3.20 (Average local market)</span>
-                <span>₹4.50 (Direct shop supply)</span>
+              <div className="flex justify-between text-xs text-slate-500 font-mono mt-2.5">
+                <span>₹5.50 (High-volume dealer rate)</span>
+                <span>₹6.50 (Average market supply)</span>
+                <span>₹7.50 (Direct retail drop)</span>
               </div>
             </div>
 
-            {/* Inclusions Pill List */}
-            <div className="pt-4 border-t border-slate-100">
-              <h4 className="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-3">
-                Key Items Included in ₹11.9 Lakh Setup
-              </h4>
+            {/* Per-Bottle Unit Cost Breakdown (Transparent Indian Economics) */}
+            <div className="pt-6 border-t border-stone-200">
+              <div className="flex items-center justify-between mb-3">
+                <span className="text-xs font-mono uppercase tracking-wider text-slate-500">
+                  Transparent Per-Bottle Unit Cost Breakdown
+                </span>
+                <span className="font-mono text-xs font-bold text-slate-900">
+                  Total: ₹1.40
+                </span>
+              </div>
+
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5 font-mono text-xs">
+                <div className="p-3 bg-white rounded-xl border border-stone-200/80">
+                  <span className="text-[10px] text-slate-400 block">Sugar &amp; RO Water</span>
+                  <span className="font-bold text-slate-900 block mt-0.5">₹0.45</span>
+                </div>
+                <div className="p-3 bg-white rounded-xl border border-stone-200/80">
+                  <span className="text-[10px] text-slate-400 block">Flavour Concentrate</span>
+                  <span className="font-bold text-slate-900 block mt-0.5">₹0.40</span>
+                </div>
+                <div className="p-3 bg-white rounded-xl border border-stone-200/80">
+                  <span className="text-[10px] text-slate-400 block">CO2 Gas &amp; Seal</span>
+                  <span className="font-bold text-slate-900 block mt-0.5">₹0.35</span>
+                </div>
+                <div className="p-3 bg-white rounded-xl border border-stone-200/80">
+                  <span className="text-[10px] text-slate-400 block">Power &amp; Labour</span>
+                  <span className="font-bold text-slate-900 block mt-0.5">₹0.20</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Setup Inclusions Check */}
+            <div className="pt-2">
+              <span className="text-xs font-mono uppercase tracking-wider text-slate-500 block mb-3">
+                Key Components Included in ₹11.9 Lakh Setup
+              </span>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-slate-700">
                 <div className="flex items-center gap-2">
-                  <ShieldCheck size={16} className="text-emerald-500 shrink-0" />
-                  <span>Semi-Automatic Soda Filling Machine</span>
+                  <Check size={14} className="text-emerald-600 shrink-0" weight="bold" />
+                  <span>Semi-Automatic 4-Head Soda Bottling Unit</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <ShieldCheck size={16} className="text-emerald-500 shrink-0" />
-                  <span>Air-Operated Marble Bottle Sealer</span>
+                  <Check size={14} className="text-emerald-600 shrink-0" weight="bold" />
+                  <span>Pneumatic Codd-Neck Marble Sealing Head</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <ShieldCheck size={16} className="text-emerald-500 shrink-0" />
-                  <span>SS 304 Syrup Tanks &amp; Cooling Chiller</span>
+                  <Check size={14} className="text-emerald-600 shrink-0" weight="bold" />
+                  <span>Industrial Chiller &amp; SS 304 Syrup Tanks</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <ShieldCheck size={16} className="text-emerald-500 shrink-0" />
-                  <span>Single-Owner Area Selling Rights</span>
+                  <Check size={14} className="text-emerald-600 shrink-0" weight="bold" />
+                  <span>Single-Owner Area Exclusive Protection</span>
                 </div>
               </div>
             </div>
 
           </div>
 
-          {/* Projection Summary Card (5 cols) */}
-          <div className="lg:col-span-5 bg-[#0A3B60] text-white p-6 sm:p-8 rounded-2xl shadow-xl flex flex-col justify-between space-y-6">
-            <div>
-              <span className="text-xs font-semibold uppercase tracking-wider text-[#EAB308]">
-                Estimated Income
-              </span>
-              <h3 className="text-2xl font-bold mt-1 text-white">
-                Monthly Return Projection
+          {/* Right Column: High-Contrast Financial Statement (5 cols) */}
+          <div className="lg:col-span-5 bg-[#0A2E4C] text-white rounded-3xl p-6 sm:p-10 shadow-xl flex flex-col justify-between space-y-8 relative overflow-hidden">
+            <div className="absolute inset-0 grid-blueprint-dark opacity-30 pointer-events-none" />
+
+            <div className="relative z-10">
+              <div className="text-xs font-mono uppercase tracking-widest text-[#EAB308] mb-1">
+                PROJECTED RETURNS
+              </div>
+              <h3 className="text-2xl font-bold tracking-tight text-white">
+                Monthly Net Profit Statement
               </h3>
             </div>
 
-            <div className="space-y-4">
-              <div className="p-4 rounded-xl bg-white/10 backdrop-blur-sm border border-white/10 flex items-center justify-between">
+            {/* Financial Output Blocks */}
+            <div className="space-y-4 relative z-10 font-mono">
+              <div className="p-4 rounded-2xl bg-white/10 backdrop-blur-sm border border-white/10 flex items-center justify-between">
                 <div>
-                  <div className="text-xs text-slate-300">Monthly Production</div>
+                  <div className="text-xs text-slate-300">Monthly Volume (26 Days)</div>
                   <div className="text-xl font-bold text-white mt-0.5">
-                    {monthlyVolume.toLocaleString()} bottles
+                    {monthlyBottles.toLocaleString()} units
                   </div>
                 </div>
-                <ChartLineUp size={28} className="text-[#EAB308]" />
+                <div className="text-xs text-[#EAB308] bg-[#EAB308]/20 px-2.5 py-1 rounded-full font-semibold">
+                  Active Plant
+                </div>
               </div>
 
-              <div className="p-4 rounded-xl bg-white/10 backdrop-blur-sm border border-white/10 flex items-center justify-between">
+              <div className="p-4 rounded-2xl bg-white/10 backdrop-blur-sm border border-white/10 flex items-center justify-between">
                 <div>
-                  <div className="text-xs text-slate-300">Estimated Monthly Net Profit</div>
-                  <div className="text-2xl font-extrabold text-emerald-400 mt-0.5">
+                  <div className="text-xs text-slate-300">Estimated Net Profit / Month</div>
+                  <div className="text-3xl font-extrabold text-emerald-400 mt-0.5">
                     ₹{monthlyNetProfit.toLocaleString()}
                   </div>
                 </div>
-                <CurrencyInr size={28} className="text-emerald-400" />
+                <CurrencyInr size={32} className="text-emerald-400" />
               </div>
 
-              <div className="p-4 rounded-xl bg-white/10 backdrop-blur-sm border border-white/10 flex items-center justify-between">
+              <div className="p-4 rounded-2xl bg-white/10 backdrop-blur-sm border border-white/10 flex items-center justify-between">
                 <div>
-                  <div className="text-xs text-slate-300">Investment Recovery Time</div>
-                  <div className="text-2xl font-extrabold text-[#EAB308] mt-0.5">
+                  <div className="text-xs text-slate-300">Capital Recovery Horizon</div>
+                  <div className="text-2xl font-bold text-[#EAB308] mt-0.5">
                     {paybackMonths} Months
                   </div>
                 </div>
-                <div className="text-right text-xs text-slate-300">
-                  For ₹11.9L Setup
+                <div className="text-right text-[11px] text-slate-300">
+                  On ₹11.9L Capital
                 </div>
               </div>
             </div>
 
-            <div className="pt-2">
+            {/* Action CTA */}
+            <div className="relative z-10 pt-2 space-y-3">
               <Link
                 href="/franchise#apply"
-                className="w-full flex items-center justify-center gap-2 bg-[#EAB308] hover:bg-[#ca9a07] text-slate-900 font-bold py-3.5 px-6 rounded-full text-sm shadow-md transition-colors active:scale-[0.98]"
+                className="w-full flex items-center justify-center gap-2 bg-[#EAB308] hover:bg-[#ca9a07] text-slate-900 font-bold py-4 px-6 rounded-2xl text-sm shadow-md transition-all active:scale-[0.98]"
               >
-                <span>Get Full Franchise Details</span>
+                <span>Download Factory Project Report</span>
                 <ArrowRight size={16} weight="bold" />
               </Link>
-              <p className="text-[11px] text-slate-400 text-center mt-3">
-                Calculated on 26 working days in a month based on actual operating plants.
+              <p className="text-[11px] text-slate-400 text-center font-mono">
+                Calculated on ₹1.40 production cost &amp; ₹45,000 monthly overheads.
               </p>
             </div>
 

@@ -7,7 +7,7 @@ import {
   WhatsappLogo, 
   PhoneCall, 
   ShieldCheck, 
-  CheckCircle,
+  Check,
   CurrencyInr,
   BuildingApartment,
   MapPin
@@ -31,12 +31,10 @@ export function LeadCaptureSection() {
     e.preventDefault();
     setLoading(true);
 
-    // Simulate submission latency
     setTimeout(() => {
       setLoading(false);
       setSubmitted(true);
 
-      // Trigger celebration confetti
       try {
         confetti({
           particleCount: 80,
@@ -45,9 +43,9 @@ export function LeadCaptureSection() {
           colors: ["#0E609C", "#EAB308", "#10B981"]
         });
       } catch {
-        // Fallback gracefully if canvas is unavailable
+        // Fallback safely
       }
-    }, 600);
+    }, 500);
   };
 
   const handleChange = (
@@ -60,81 +58,70 @@ export function LeadCaptureSection() {
   };
 
   return (
-    <section id="franchise-inquiry" className="py-24 bg-[#0A2540] text-white relative overflow-hidden">
-      {/* Subtle background ambient mesh */}
-      <div className="absolute inset-0 opacity-10 pointer-events-none bg-[radial-gradient(#0E609C_1px,transparent_1px)] [background-size:24px_24px]" />
-      <div className="absolute -top-40 -right-40 w-96 h-96 bg-[#0E609C]/30 rounded-full blur-3xl pointer-events-none" />
+    <section id="franchise-inquiry" className="py-24 bg-[#0A1A2A] text-white relative overflow-hidden">
+      {/* Blueprint grid texture */}
+      <div className="absolute inset-0 grid-blueprint-dark opacity-30 pointer-events-none" />
+      <div className="absolute -top-40 -right-40 w-96 h-96 bg-[#0E609C]/25 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-[#EAB308]/15 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           
-          {/* Left Column: Value Proposition */}
+          {/* Left Column: Direct Factory Consultation Proposition */}
           <div className="lg:col-span-5 space-y-6">
-            <div className="inline-flex items-center gap-2 bg-[#EAB308]/20 text-[#EAB308] px-3.5 py-1 rounded-full text-xs font-semibold uppercase tracking-wider">
+            <div className="inline-flex items-center gap-2 bg-[#EAB308]/20 text-[#EAB308] px-3.5 py-1 rounded-full text-xs font-mono font-semibold uppercase tracking-wider">
               <CurrencyInr size={14} weight="bold" />
-              <span>Franchise Project Report</span>
+              <span>TERRITORY INQUIRY · 2026</span>
             </div>
 
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white leading-tight">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white leading-[1.1]">
               Get Complete Factory Setup Details
             </h2>
 
-            <p className="text-base text-slate-300 leading-relaxed">
-              Get the full machine quotation, profit and cost breakdown, syrup price list, and check if your district is available directly from our Kasaragod team.
+            <p className="text-base text-slate-300 leading-relaxed max-w-[48ch]">
+              Receive the complete machine equipment quotation, per-bottle profit breakdown, raw syrup price list, and check if your district has open territory rights.
             </p>
 
-            {/* Credibility highlights */}
-            <div className="space-y-3.5 pt-2">
+            {/* Industrial Key Assurances */}
+            <div className="space-y-3 pt-2 font-mono text-xs">
               <div className="flex items-center gap-3">
-                <div className="w-8 h-8 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0">
-                  <CheckCircle size={18} weight="fill" />
-                </div>
-                <span className="text-sm font-medium text-slate-200">
-                  Complete machine setup starting at ₹11.9 Lakhs
+                <span className="w-5 h-5 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0">
+                  <Check size={12} weight="bold" />
                 </span>
+                <span className="text-slate-200">Complete setup package starting at ₹11.9 Lakhs</span>
               </div>
-
               <div className="flex items-center gap-3">
-                <div className="w-8 h-8 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0">
-                  <CheckCircle size={18} weight="fill" />
-                </div>
-                <span className="text-sm font-medium text-slate-200">
-                  Full investment recovery in 4 to 6 months
+                <span className="w-5 h-5 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0">
+                  <Check size={12} weight="bold" />
                 </span>
+                <span className="text-slate-200">Full investment recovery in 4 to 6 months</span>
               </div>
-
               <div className="flex items-center gap-3">
-                <div className="w-8 h-8 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0">
-                  <CheckCircle size={18} weight="fill" />
-                </div>
-                <span className="text-sm font-medium text-slate-200">
-                  Direct syrup and flavor supply from our factory
+                <span className="w-5 h-5 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0">
+                  <Check size={12} weight="bold" />
                 </span>
+                <span className="text-slate-200">Direct syrup and bottle dispatch from Kasaragod plant</span>
               </div>
-
               <div className="flex items-center gap-3">
-                <div className="w-8 h-8 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0">
-                  <CheckCircle size={18} weight="fill" />
-                </div>
-                <span className="text-sm font-medium text-slate-200">
-                  Single-owner rights for your district or taluka
+                <span className="w-5 h-5 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0">
+                  <Check size={12} weight="bold" />
                 </span>
+                <span className="text-slate-200">Exclusive single-owner district selling agreement</span>
               </div>
             </div>
 
-            {/* Direct Connect Options */}
-            <div className="pt-6 border-t border-slate-800 flex flex-wrap gap-4 items-center">
+            {/* Direct Connect Actions */}
+            <div className="pt-6 border-t border-white/10 flex flex-wrap gap-3 items-center">
               <a
                 href="tel:+919659100500"
                 className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/15 text-white px-4 py-2.5 rounded-xl text-xs font-semibold transition-colors border border-white/10"
               >
                 <PhoneCall size={16} weight="bold" className="text-[#EAB308]" />
-                <span>Direct Helpline: +91 9659 100 500</span>
+                <span>Helpline: +91 9659 100 500</span>
               </a>
 
               <a
-                href="https://wa.me/919659100500?text=Hello%20Freshco%20Team,%20I%20am%20interested%20in%20the%2011.9L%20soda%20factory%20setup"
+                href="https://wa.me/919659100500?text=Hello%20Freshco%20Team,%20I%20am%20interested%20in%20the%2011.9L%20soda%20factory%20setup%20in%20my%20district"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 bg-[#25D366]/20 hover:bg-[#25D366]/30 text-[#25D366] px-4 py-2.5 rounded-xl text-xs font-semibold transition-colors border border-[#25D366]/30"
@@ -145,24 +132,24 @@ export function LeadCaptureSection() {
             </div>
           </div>
 
-          {/* Right Column: Lead Form Card */}
+          {/* Right Column: High-Contrast Consultation Form */}
           <div className="lg:col-span-7">
-            <div className="bg-white text-slate-900 rounded-3xl p-6 sm:p-10 shadow-2xl border border-slate-200/80">
+            <div className="bg-white text-slate-900 rounded-3xl p-6 sm:p-10 shadow-2xl border border-stone-200">
               {submitted ? (
                 <div className="text-center py-10 space-y-5">
                   <div className="w-16 h-16 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto">
-                    <CheckCircle size={36} weight="fill" />
+                    <Check size={32} weight="bold" />
                   </div>
-                  <h3 className="text-2xl font-bold text-slate-900">
+                  <h3 className="text-2xl font-bold text-slate-900 tracking-tight">
                     Details Received Successfully
                   </h3>
                   <p className="text-sm text-slate-600 max-w-md mx-auto leading-relaxed">
-                    Thank you, <span className="font-semibold text-slate-900">{formData.fullName || "Sir/Madam"}</span>. Our expansion manager will check area availability for <span className="font-semibold text-slate-900">{formData.stateDistrict || "your district"}</span> and call you within 4 hours.
+                    Thank you, <span className="font-semibold text-slate-900">{formData.fullName || "Partner"}</span>. Our factory manager will check district rights for <span className="font-semibold text-slate-900">{formData.stateDistrict || "your area"}</span> and contact you within 4 hours.
                   </p>
                   
                   <div className="pt-4 flex flex-col sm:flex-row gap-3 justify-center">
                     <a
-                      href={`https://wa.me/919659100500?text=Hi%20Freshco,%20I%20just%20submitted%20the%20franchise%20form%20for%20${encodeURIComponent(formData.stateDistrict || "my city")}.%20My%20name%20is%20${encodeURIComponent(formData.fullName || "Partner")}.`}
+                      href={`https://wa.me/919659100500?text=Hi%20Freshco,%20I%20just%20submitted%20the%20factory%20inquiry%20for%20${encodeURIComponent(formData.stateDistrict || "my district")}.%20My%20name%20is%20${encodeURIComponent(formData.fullName || "Partner")}.`}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-[#25D366] text-black font-semibold text-xs hover:bg-[#20ba59] transition-colors"
@@ -174,7 +161,7 @@ export function LeadCaptureSection() {
                     <button
                       type="button"
                       onClick={() => setSubmitted(false)}
-                      className="inline-flex items-center justify-center px-6 py-3 rounded-xl border border-slate-200 text-slate-700 font-semibold text-xs hover:bg-slate-50 transition-colors"
+                      className="inline-flex items-center justify-center px-6 py-3 rounded-xl border border-stone-200 text-slate-700 font-semibold text-xs hover:bg-stone-50 transition-colors"
                     >
                       Submit Another Query
                     </button>
@@ -182,12 +169,12 @@ export function LeadCaptureSection() {
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-4">
-                  <div className="border-b border-slate-100 pb-4 mb-4">
-                    <h3 className="text-xl font-bold text-slate-900">
-                      Franchise Application &amp; Area Check
+                  <div className="border-b border-stone-100 pb-4 mb-4">
+                    <h3 className="text-xl font-bold text-slate-900 tracking-tight">
+                      Factory Application &amp; Territory Check
                     </h3>
                     <p className="text-xs text-slate-500 mt-1">
-                      Direct factory inquiry for setting up a new soda bottling plant.
+                      Direct factory inquiry for setting up a high-profit soda bottling unit.
                     </p>
                   </div>
 
@@ -204,7 +191,7 @@ export function LeadCaptureSection() {
                         value={formData.fullName}
                         onChange={handleChange}
                         placeholder="e.g. Suresh Kumar"
-                        className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-[#0E609C] focus:border-transparent bg-slate-50/50"
+                        className="w-full px-3.5 py-2.5 rounded-xl border border-stone-200 text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-[#0E609C] bg-stone-50/50"
                       />
                     </div>
 
@@ -220,7 +207,7 @@ export function LeadCaptureSection() {
                         value={formData.mobile}
                         onChange={handleChange}
                         placeholder="+91 98765 43210"
-                        className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-[#0E609C] focus:border-transparent bg-slate-50/50"
+                        className="w-full px-3.5 py-2.5 rounded-xl border border-stone-200 text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-[#0E609C] bg-stone-50/50"
                       />
                     </div>
                   </div>
@@ -237,7 +224,7 @@ export function LeadCaptureSection() {
                         value={formData.email}
                         onChange={handleChange}
                         placeholder="yourname@gmail.com"
-                        className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-[#0E609C] focus:border-transparent bg-slate-50/50"
+                        className="w-full px-3.5 py-2.5 rounded-xl border border-stone-200 text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-[#0E609C] bg-stone-50/50"
                       />
                     </div>
 
@@ -254,7 +241,7 @@ export function LeadCaptureSection() {
                           value={formData.stateDistrict}
                           onChange={handleChange}
                           placeholder="e.g. Madurai, Tamil Nadu"
-                          className="w-full pl-3.5 pr-8 py-2.5 rounded-xl border border-slate-200 text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-[#0E609C] focus:border-transparent bg-slate-50/50"
+                          className="w-full pl-3.5 pr-8 py-2.5 rounded-xl border border-stone-200 text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-[#0E609C] bg-stone-50/50"
                         />
                         <MapPin size={16} className="absolute right-3 top-3 text-slate-400 pointer-events-none" />
                       </div>
@@ -271,7 +258,7 @@ export function LeadCaptureSection() {
                         name="investmentTier"
                         value={formData.investmentTier}
                         onChange={handleChange}
-                        className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-[#0E609C] focus:border-transparent bg-slate-50/50"
+                        className="w-full px-3.5 py-2.5 rounded-xl border border-stone-200 text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-[#0E609C] bg-stone-50/50"
                       >
                         <option value="standard">Standard Soda Factory (₹11.9 Lakhs) - Most Popular</option>
                         <option value="express">Starter Bottling Unit (₹10.5 Lakhs)</option>
@@ -290,7 +277,7 @@ export function LeadCaptureSection() {
                           name="spaceAvailable"
                           value={formData.spaceAvailable}
                           onChange={handleChange}
-                          className="w-full pl-3.5 pr-8 py-2.5 rounded-xl border border-slate-200 text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-[#0E609C] focus:border-transparent bg-slate-50/50"
+                          className="w-full pl-3.5 pr-8 py-2.5 rounded-xl border border-stone-200 text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-[#0E609C] bg-stone-50/50"
                         >
                           <option value="400-600">400 to 600 sq.ft (Ideal for ₹11.9L setup)</option>
                           <option value="300-450">300 to 450 sq.ft (For starter plant)</option>
@@ -313,7 +300,7 @@ export function LeadCaptureSection() {
                       value={formData.message}
                       onChange={handleChange}
                       placeholder="Tell us about your current business or planned launch month..."
-                      className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-[#0E609C] focus:border-transparent bg-slate-50/50 resize-none"
+                      className="w-full px-3.5 py-2.5 rounded-xl border border-stone-200 text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-[#0E609C] bg-stone-50/50 resize-none"
                     />
                   </div>
 
@@ -322,23 +309,23 @@ export function LeadCaptureSection() {
                     <button
                       type="submit"
                       disabled={loading}
-                      className="w-full py-3.5 px-6 rounded-xl bg-[#0E609C] hover:bg-[#0A3B60] text-white font-bold text-sm transition-all shadow-md hover:shadow-lg flex items-center justify-center gap-2 group cursor-pointer disabled:opacity-70"
+                      className="w-full py-3.5 px-6 rounded-xl bg-[#0E609C] hover:bg-[#0A2E4C] text-white font-bold text-sm transition-all shadow-md hover:shadow-lg flex items-center justify-center gap-2 group cursor-pointer disabled:opacity-70"
                     >
                       {loading ? (
-                        <span>Sending Details...</span>
+                        <span>Checking Territory...</span>
                       ) : (
                         <>
-                          <span>Send Franchise Application</span>
+                          <span>Submit Franchise Application</span>
                           <PaperPlaneTilt size={16} weight="bold" className="group-hover:translate-x-1 transition-transform" />
                         </>
                       )}
                     </button>
                   </div>
 
-                  {/* Privacy note */}
-                  <div className="flex items-center justify-center gap-2 text-[11px] text-slate-500 pt-2">
+                  {/* Direct Factory Guarantee */}
+                  <div className="flex items-center justify-center gap-2 text-[11px] text-slate-500 pt-2 font-mono">
                     <ShieldCheck size={14} className="text-emerald-600" />
-                    <span>Direct factory application. Your contact details are 100% safe with us.</span>
+                    <span>Direct factory application. Your data is 100% private.</span>
                   </div>
                 </form>
               )}
